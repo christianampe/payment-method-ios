@@ -27,10 +27,12 @@ open class CreditCard: UIView {
     // MARK: Programmatic Initalizer
     public init(_ frame: CGRect) {
         
-        let cardView = UIView()
+        let cardView = UIView(frame: frame)
         self.cardView = cardView
         
         super.init(frame: frame)
+        
+        initViews()
         
         addViews()
         addConstraints()
@@ -44,12 +46,21 @@ open class CreditCard: UIView {
         
         super.init(coder: aDecoder)
         
+        initViews()
+        
         addViews()
         addConstraints()
     }
 }
 
 extension CreditCard {
+    func initViews() {
+        
+        cardView.layer.borderWidth = 1.0
+        cardView.layer.cornerRadius = 8.0
+        cardView.layer.borderColor = UIColor.black.cgColor
+    }
+    
     func addViews() {
         
         addSubview(cardView)
@@ -64,9 +75,11 @@ extension CreditCard {
         if frame.width/frame.height >= PaymentConstants.creditCardAspectRatio {
             cardView.topAnchor.constraint(equalTo: topAnchor).isActive = true
             cardView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            cardView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         } else {
             cardView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
             cardView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            cardView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         }
     }
 }

@@ -7,18 +7,17 @@
 //
 
 import UIKit
+import FlatPaymentMethod
 
 class ViewController: UIViewController {
+    @IBOutlet weak var creditCard: CreditCard!
+}
 
+extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        creditCard.layer.borderWidth = 1.0
+        creditCard.layer.borderColor = UIColor.green.cgColor
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 
