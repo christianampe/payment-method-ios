@@ -118,7 +118,7 @@ private extension CreditCardView {
         nameLabel.lineBreakMode = .byClipping
         nameLabel.numberOfLines = 0
         
-        cardLogo.image = UIImage(named: "mastercard.png", in: Bundle(for: CreditCard.self), compatibleWith: nil)
+        cardLogo.image = UIImage(named: "mastercard.png", in: Bundle(for: CreditCardView.self), compatibleWith: nil)
         numberLabel.text = "••••  ••••  ••••  3847"
         ccvLabel.text = "•••"
         dateLabel.text = "07/22"
