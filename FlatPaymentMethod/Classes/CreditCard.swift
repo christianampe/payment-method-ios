@@ -96,6 +96,8 @@ private extension CreditCard {
         cardView.layer.borderColor = UIColor.black.cgColor
         
         cardLogo.contentMode = .scaleAspectFit
+        cardLogo.layer.borderColor = UIColor.black.cgColor
+        cardLogo.layer.borderWidth = 1.0
         
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.1
@@ -117,7 +119,7 @@ private extension CreditCard {
         nameLabel.lineBreakMode = .byClipping
         nameLabel.numberOfLines = 0
         
-        cardLogo.image
+        cardLogo.image = UIImage(named: "visa.png")
         numberLabel.text = "••••  ••••  ••••  3847"
         ccvLabel.text = "•••"
         dateLabel.text = "07/22"
@@ -170,6 +172,7 @@ private extension CreditCard {
         cardLogo.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
         cardLogo.topAnchor.constraint(equalTo: cardView.topAnchor, constant: cardView.frame.height/10).isActive = true
         cardLogo.heightAnchor.constraint(equalToConstant: cardView.frame.height/5).isActive = true
+        cardLogo.widthAnchor.constraint(equalTo: cardView.widthAnchor).isActive = true
     }
     
     func addNameLabelConstraints() {

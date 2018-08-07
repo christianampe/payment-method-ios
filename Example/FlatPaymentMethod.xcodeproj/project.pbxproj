@@ -13,6 +13,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		BF1C9D62211977BF003222CC /* visa-white.png in Resources */ = {isa = PBXBuildFile; fileRef = BF1C9D61211977BF003222CC /* visa-white.png */; };
 		D74F262E8BF1677E8DFE73BC /* Pods_FlatPaymentMethod_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDA3BDF6F5A98F59ABA68D7 /* Pods_FlatPaymentMethod_Example.framework */; };
 		FDC0065F637CC0FAD5987FA1 /* Pods_FlatPaymentMethod_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83877FFC476DCF3D6F46D6FC /* Pods_FlatPaymentMethod_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		76B146108DE8DE3C54B3A98C /* Pods-FlatPaymentMethod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatPaymentMethod_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlatPaymentMethod_Example/Pods-FlatPaymentMethod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		83877FFC476DCF3D6F46D6FC /* Pods_FlatPaymentMethod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatPaymentMethod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1C9D61211977BF003222CC /* visa-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visa-white.png"; sourceTree = "<group>"; };
 		EFDB39556563CF15BCCCD3D8 /* Pods-FlatPaymentMethod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatPaymentMethod_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlatPaymentMethod_Tests/Pods-FlatPaymentMethod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 		BF0AF3582119775900C500FD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				BF1C9D60211977B4003222CC /* Images */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -189,6 +192,14 @@
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BF1C9D60211977B4003222CC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				BF1C9D61211977BF003222CC /* visa-white.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +290,7 @@
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				BF1C9D62211977BF003222CC /* visa-white.png in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
