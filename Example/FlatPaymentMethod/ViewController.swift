@@ -16,8 +16,6 @@ class ViewController: UIViewController {
 extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        creditCard.layer.borderWidth = 1.0
-        creditCard.layer.borderColor = UIColor.green.cgColor
     }
 }
 
