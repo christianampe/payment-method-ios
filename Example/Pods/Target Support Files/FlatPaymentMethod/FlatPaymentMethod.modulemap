@@ -1,0 +1,6 @@
+framework module FlatPaymentMethod {
+  umbrella header "FlatPaymentMethod-umbrella.h"
+
+  export *
+  module * { export * }
+}
