@@ -8,6 +8,11 @@
 import Foundation
 
 open class CreditCardValidator {
+    
+    // per https://baymard.com/checkout-usability/credit-card-patterns
+    // Feb 3, 2017 article publish date
+    // Aug 7, 2018 implementation date
+    // Aug 7, 2018 implementation updated date
     func requirements(for cardType: CreditCardType) -> CreditCardValidationRequirement? {
         let prefixes: [PrefixContainable]
         let lengths: [Int]
@@ -38,22 +43,22 @@ open class CreditCardValidator {
             prefixes = ["3528"..."3589"]
             lengths = [16]
         case .maestro:
-            prefixes = []
-            lengths = []
+            prefixes = ["500000"..."509999", "560000"..."589999", "600000"..."699999"]
+            lengths = [12, 13, 14, 15, 16, 17, 18, 19]
         case .dankort:
-            prefixes = []
-            lengths = []
+            prefixes = ["5019"]
+            lengths = [16]
         case .masterCard:
-            prefixes = []
-            lengths = []
+            prefixes = ["51"..."55"]
+            lengths = [16]
         case .visa(let type):
             switch type {
             case .visa:
-                prefixes = []
-                lengths = []
+                prefixes = ["4"]
+                lengths = [13, 14, 15, 16, 17, 18, 19]
             case .electron:
-                prefixes = []
-                lengths = []
+                prefixes = ["4026", "417500", "4405", "4508", "4844", "4913", "4917"]
+                lengths = [16]
             }
         }
         
