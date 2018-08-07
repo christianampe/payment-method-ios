@@ -13,7 +13,6 @@ public enum CreditCardType {
     case dinersClub(type: DinersClubType)
     case discover
     case jcb
-    case laser
     case maestro
     case dankort
     case masterCard

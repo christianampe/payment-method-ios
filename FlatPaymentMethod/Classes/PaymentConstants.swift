@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - UI Constants
 public struct PaymentConstants {
-    static let creditCardAspectRatio: CGFloat = 1.586
+    public static let creditCardAspectRatio: CGFloat = 1.586
 }
