@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'FlatPaymentMethod_Example' do
+  pod 'FlatPaymentMethod', :path => '../'
+
+  target 'FlatPaymentMethod_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
