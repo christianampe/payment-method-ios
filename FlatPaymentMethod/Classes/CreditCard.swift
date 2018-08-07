@@ -95,6 +95,26 @@ private extension CreditCard {
         cardView.layer.cornerRadius = 8.0
         cardView.layer.borderColor = UIColor.black.cgColor
         
+        numberLabel.adjustsFontSizeToFitWidth = true
+        numberLabel.minimumScaleFactor = 0.1
+        numberLabel.lineBreakMode = .byClipping
+        numberLabel.numberOfLines = 0
+        
+        ccvLabel.adjustsFontSizeToFitWidth = true
+        ccvLabel.minimumScaleFactor = 0.1
+        ccvLabel.lineBreakMode = .byClipping
+        ccvLabel.numberOfLines = 0
+        
+        dateLabel.adjustsFontSizeToFitWidth = true
+        dateLabel.minimumScaleFactor = 0.1
+        dateLabel.lineBreakMode = .byClipping
+        dateLabel.numberOfLines = 0
+        
+        nameLabel.adjustsFontSizeToFitWidth = true
+        nameLabel.minimumScaleFactor = 0.1
+        nameLabel.lineBreakMode = .byClipping
+        nameLabel.numberOfLines = 0
+        
         numberLabel.text = "••••  ••••  ••••  3847"
         
         ccvLabel.text = "•••"
@@ -114,8 +134,9 @@ private extension CreditCard {
     }
     
     func addConstraints() {
-        
+        setAutoresizingMasks()
         addCardViewConstraints()
+        addLeftAnchors()
         addCardLogoConstraints()
         addNumberLabelConstraints()
         addCCVLabelConstraints()
@@ -123,9 +144,15 @@ private extension CreditCard {
         addNameLabelConstraints()
     }
     
-    func addCardViewConstraints() {
+    func setAutoresizingMasks() {
         cardView.translatesAutoresizingMaskIntoConstraints = false
-        
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
+        ccvLabel.translatesAutoresizingMaskIntoConstraints = false
+        numberLabel.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func addCardViewConstraints() {
         cardView.widthAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: PaymentConstants.creditCardAspectRatio).isActive = true
         
         if frame.width/frame.height >= PaymentConstants.creditCardAspectRatio {
@@ -141,35 +168,40 @@ private extension CreditCard {
         cardView.layoutIfNeeded()
     }
     
+    func addLeftAnchors() {
+        let leftOffset: CGFloat = cardView.frame.height/10
+        
+        nameLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: leftOffset).isActive = true
+        dateLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: leftOffset).isActive = true
+        ccvLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: leftOffset).isActive = true
+        numberLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: leftOffset).isActive = true
+    }
+    
     func addCardLogoConstraints() {
         
     }
     
-    func addNumberLabelConstraints() {
-        numberLabel.translatesAutoresizingMaskIntoConstraints = false
+    func addNameLabelConstraints() {
         
-        numberLabel.bottomAnchor.constraint(equalTo: ccvLabel.topAnchor).isActive = true
-        numberLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
-    }
-    
-    func addCCVLabelConstraints() {
-        ccvLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        ccvLabel.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -cardView.frame.height/20).isActive = true
-        ccvLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
+        nameLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -cardView.frame.height/10).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
     }
     
     func addDateLabelConstraints() {
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
         dateLabel.bottomAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
-        dateLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
+        dateLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/15).isActive = true
     }
     
-    func addNameLabelConstraints() {
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+    func addCCVLabelConstraints() {
         
-        nameLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -cardView.frame.height/10).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: cardView.leftAnchor, constant: cardView.frame.height/10).isActive = true
+        ccvLabel.bottomAnchor.constraint(equalTo: dateLabel.topAnchor, constant: -cardView.frame.height/20).isActive = true
+        ccvLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/20).isActive = true
+    }
+    
+    func addNumberLabelConstraints() {
+        
+        numberLabel.bottomAnchor.constraint(equalTo: ccvLabel.topAnchor).isActive = true
+        numberLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
     }
 }
