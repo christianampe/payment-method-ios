@@ -96,8 +96,7 @@ private extension CreditCard {
         cardView.layer.borderColor = UIColor.black.cgColor
         
         cardLogo.contentMode = .scaleAspectFit
-        cardLogo.layer.borderColor = UIColor.black.cgColor
-        cardLogo.layer.borderWidth = 1.0
+        cardLogo.image = #imageLiteral(resourceName: "mastercard")
         
         numberLabel.adjustsFontSizeToFitWidth = true
         numberLabel.minimumScaleFactor = 0.1
@@ -118,8 +117,7 @@ private extension CreditCard {
         nameLabel.minimumScaleFactor = 0.1
         nameLabel.lineBreakMode = .byClipping
         nameLabel.numberOfLines = 0
-        
-        cardLogo.image = UIImage(named: "visa.png")
+
         numberLabel.text = "••••  ••••  ••••  3847"
         ccvLabel.text = "•••"
         dateLabel.text = "07/22"
