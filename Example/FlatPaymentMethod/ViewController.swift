@@ -10,7 +10,7 @@ import UIKit
 import FlatPaymentMethod
 
 class ViewController: UIViewController {
-    @IBOutlet weak var creditCard: CreditCard!
+    @IBOutlet weak var creditCard: CreditCardView!
 }
 
 extension ViewController {

@@ -1,5 +1,5 @@
 //
-//  CreditCard.swift
+//  CreditCardView.swift
 //  FlatPaymentMethod
 //
 //  Created by Ampe on 8/6/18.
@@ -8,7 +8,7 @@
 import Foundation
 
 @IBDesignable
-open class CreditCard: UIView {
+open class CreditCardView: UIView {
     
     // MARK: Views
     open weak var cardView: UIView!
@@ -88,7 +88,7 @@ open class CreditCard: UIView {
     }
 }
 
-private extension CreditCard {
+private extension CreditCardView {
     func initViews() {
         
         cardView.layer.borderWidth = 1.0
