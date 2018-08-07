@@ -1,0 +1,6 @@
+framework module Pods_FlatPaymentMethod_Example {
+  umbrella header "Pods-FlatPaymentMethod_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

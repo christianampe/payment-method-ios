@@ -1,0 +1,16 @@
+PODS:
+  - FlatPaymentMethod (0.0.1)
+
+DEPENDENCIES:
+  - FlatPaymentMethod (from `../`)
+
+EXTERNAL SOURCES:
+  FlatPaymentMethod:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FlatPaymentMethod: 2712a266a40f299cef65ea37f5f550b84575fb76
+
+PODFILE CHECKSUM: e267e57faad02ee7f1f9485751219685792bd3d3
+
+COCOAPODS: 1.5.0

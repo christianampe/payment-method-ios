@@ -1,0 +1,6 @@
+framework module Pods_FlatPaymentMethod_Tests {
+  umbrella header "Pods-FlatPaymentMethod_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
