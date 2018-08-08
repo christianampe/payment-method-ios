@@ -16,6 +16,7 @@ open class CreditCardValidator {
     }
 }
 
+// MARK: - Public Methods
 public extension CreditCardValidator {
     
 }
@@ -29,6 +30,7 @@ private extension CreditCardValidator {
             guard let digit = Int(element) else {
                 return false
             }
+            
             switch ((idx % 2 == 1), digit) {
             case (true, 9):
                 sum += 9
@@ -38,6 +40,7 @@ private extension CreditCardValidator {
                 sum += digit
             }
         }
+        
         return sum % 10 == 0
     }
 }

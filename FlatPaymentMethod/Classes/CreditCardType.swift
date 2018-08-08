@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Credit Card Types
-public enum CreditCardType: Equatable {
+public enum CreditCardType: Equatable, Hashable {
     case visa(type: VisaType)
     case amex
     case unionPay
@@ -20,6 +20,21 @@ public enum CreditCardType: Equatable {
     case uatp
     case dankort
     case interPayment
+}
+
+// MARK: - All Cards
+public extension CreditCardType {
+    public static let all: [CreditCardType] = [.visa(type: .visa),
+                                               .visa(type: .electron),
+                                               .amex, .unionPay,
+                                               .masterCard,
+                                               .maestro,
+                                               .dinersClub(type: .carteBlanche),
+                                               .dinersClub(type: .international),
+                                               .dinersClub(type: .usbc),
+                                               .discover, .jcb,
+                                               .uatp, .dankort,
+                                               .interPayment]
 }
 
 // MARK: - Diners Card Types
