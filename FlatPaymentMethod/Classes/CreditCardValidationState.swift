@@ -7,8 +7,9 @@
 
 import Foundation
 
-public enum CreditCardValidationState: Equatable {    
+public enum CreditCardValidationState: Equatable {
     case determined(card: CreditCardType)
     case indeterminate(cards: [CreditCardType])
+    case unsupported(card: CreditCardType)
     case invalid
 }
