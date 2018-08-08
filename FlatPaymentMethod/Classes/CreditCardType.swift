@@ -35,13 +35,23 @@ public enum VisaType: Equatable {
     case electron
 }
 
-// MARK: - Constants For Determining Card Type
 public extension CreditCardType {
+    func isValid(_ accountNumber: String) -> Bool {
+        return requirement.isValid(accountNumber)
+    }
+    
+    func isPrefixValid(_ accountNumber: String) -> Bool {
+        return requirement.isPrefixValid(accountNumber)
+    }
+}
+
+// MARK: - Constants For Determining Card Type
+private extension CreditCardType {
     // per https://baymard.com/checkout-usability/credit-card-patterns
     // Feb 3, 2017 article publish date
     // Aug 7, 2018 implementation date
     // Aug 7, 2018 implementation updated date
-    var requirements: CreditCardValidationRequirement {
+    var requirement: CreditCardValidationRequirement {
         let prefixes: [PrefixContainable]
         let lengths: [Int]
         
