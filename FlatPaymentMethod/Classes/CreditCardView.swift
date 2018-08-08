@@ -105,22 +105,15 @@ public extension CreditCardView {
 // MARK: - Update Methods For Credit Card Type Validation State
 private extension CreditCardView {
     func updateView(for state: CreditCardTypeValidationState, numberLength: Int) {
-        switch state {
-        case .identified(let cardType):
-            
-        case .indeterminate(let potentialCardTypes):
-            
-        case .unsupported(let unsupportedCardTypes):
-            
-        case .invalid:
-            
+        
+        if let grouping = state.segmentGrouping(for: numberLength) {
+            updateNumberGrouping(with: grouping)
         }
+        
     }
     
-    func updateNumberGrouping(for cardType: CreditCardType, numberLength: Int) {
-        guard let grouping = cardType.segmentGrouping[numberLength] else {
-            
-        }
+    func updateNumberGrouping(with grouping: [Int]) {
+        print(grouping)
     }
 }
 

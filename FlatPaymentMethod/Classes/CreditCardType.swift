@@ -26,14 +26,17 @@ public enum CreditCardType: Equatable, Hashable {
 public extension CreditCardType {
     public static let all: [CreditCardType] = [.visa(type: .visa),
                                                .visa(type: .electron),
-                                               .amex, .unionPay,
+                                               .amex,
+                                               .unionPay,
                                                .masterCard,
                                                .maestro,
                                                .dinersClub(type: .carteBlanche),
                                                .dinersClub(type: .international),
                                                .dinersClub(type: .usbc),
-                                               .discover, .jcb,
-                                               .uatp, .dankort,
+                                               .discover,
+                                               .jcb,
+                                               .uatp,
+                                               .dankort,
                                                .interPayment]
 }
 
@@ -52,7 +55,7 @@ public enum VisaType: Equatable {
 
 public extension CreditCardType {
     func isValid(_ accountNumber: String) -> Bool {
-        return requirement.isValid(accountNumber) && luhnCheck(accountNumber)
+        return requirement.isValid(accountNumber) && Mathematics.luhnCheck(accountNumber)
     }
     
     func isPrefixValid(_ accountNumber: String) -> Bool {
@@ -61,63 +64,18 @@ public extension CreditCardType {
 }
 
 public extension CreditCardType {
-    static let defaultSegmentSize: Int = 4
-    
     func segmentGrouping(for length: Int) -> [Int] {
         if let assignedGrouping = segmentGrouping[length] {
             return assignedGrouping
         } else {
-            return defaultGrouping(for: length)
+            return Mathematics.defaultGrouping(for: length)
         }
     }
     
-    func defaultGrouping(for length: Int) -> [Int] {
-        var defaultGrouping: [Int]
+    func prioritize(cards: [CreditCardType]) -> CreditCardType {
         
-        let fullSegments: Int = Int(Double(length / CreditCardType.defaultSegmentSize).rounded(.down))
-        let remainder: Int = length % CreditCardType.defaultSegmentSize
-        
-        let fullSegmentArray: [Int] = Array(repeating: CreditCardType.defaultSegmentSize, count: fullSegments)
-        
-        defaultGrouping = fullSegmentArray
-        
-        if remainder > 0 {
-            guard remainder < CreditCardType.defaultSegmentSize else {
-                assert(false, "internal inconsistency - file a bug")
-                return defaultGrouping
-            }
-            
-            defaultGrouping.append(remainder)
-        }
-        
-        return defaultGrouping
     }
 }
-
-// MARK: - Luhn Check Algorithm
-private extension CreditCardType {
-    // per https://gist.github.com/cwagdev/635ce973e8e86da0403a
-    func luhnCheck(_ cardNumber: String) -> Bool {
-        var sum: Int = 0
-        for (idx, element) in (cardNumber.reversed().map { String($0) }).enumerated() {
-            guard let digit = Int(element) else {
-                return false
-            }
-            
-            switch ((idx % 2 == 1), digit) {
-            case (true, 9):
-                sum += 9
-            case (true, 0...8):
-                sum += (digit * 2) % 9
-            default:
-                sum += digit
-            }
-        }
-        
-        return sum % 10 == 0
-    }
-}
-
 
 // MARK: - Constants For Determining Card Type
 private extension CreditCardType {
@@ -176,8 +134,8 @@ private extension CreditCardType {
             prefixes = ["1"]
             lengths = [15]
         case .interPayment:
-            prefixes = ["4026", "417500", "4405", "4508", "4844", "4913", "4917"]
-            lengths = [16]
+            prefixes = ["636"]
+            lengths = [16, 17, 18, 19]
         }
         
         return CreditCardTypeValidationRequirement(prefixes: prefixes, lengths: lengths)

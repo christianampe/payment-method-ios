@@ -19,6 +19,6 @@ open class CreditCardTypeValidator {
 // MARK: - Public Methods
 public extension CreditCardTypeValidator {
     func card(for accountNumber: String) -> CreditCardTypeValidationState {
-        return CreditCardTypeValidationState(fromNumber: accountNumber, supportedCards: supportedCardTypes)
+        return CreditCardTypeValidationState(fromPrefix: accountNumber, supportedCards: supportedCardTypes)
     }
 }

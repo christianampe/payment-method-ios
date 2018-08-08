@@ -30,6 +30,11 @@ public extension CreditCardTypeValidationState {
     }
     
     init(fromPrefix prefix: String, supportedCards: [CreditCardType]) {
+        guard supportedCards.count > 0 else {
+            self = .invalid
+            return
+        }
+        
         let possibleCardTypes = CreditCardType.all.filter { $0.isPrefixValid(prefix) }
         
         guard possibleCardTypes.count > 0 else {
@@ -56,6 +61,25 @@ public extension CreditCardTypeValidationState {
             self = .identified(card)
         } else {
             self = .indeterminate(cards: possibleCardTypes)
+        }
+    }
+}
+
+public extension CreditCardTypeValidationState {
+    func segmentGrouping(for length: Int) -> [Int]? {
+        switch self {
+        case .identified(let card):
+            return card.segmentGrouping(for: length)
+        case .indeterminate:
+            return Mathematics.defaultGrouping(for: length)
+        case .unsupported(let cards):
+            if cards.count == 1, let card = cards.first {
+                return card.segmentGrouping(for: length)
+            } else {
+                return Mathematics.defaultGrouping(for: length)
+            }
+        case .invalid:
+            return nil
         }
     }
 }

@@ -22,7 +22,7 @@ public extension CreditCardTypeValidationRequirement {
             return true
         }
         
-        return prefixes.contains { $0.hasCommonPrefix(with: accountNumber) }
+        return prefixes.contains { $0.hasCommonPrefix(with: accountNumber) } && isWithinValidLength(accountNumber)
     }
 }
 
@@ -34,5 +34,14 @@ private extension CreditCardTypeValidationRequirement {
         }
         
         return lengths.contains { accountNumber.count == $0 }
+    }
+    
+    func isWithinValidLength(_ accountNumber: String) -> Bool {
+        guard let largest = lengths.sorted().last else {
+            assert(false, "internal inconsistency - file a bug")
+            return false
+        }
+        
+        return largest >= accountNumber.count
     }
 }
