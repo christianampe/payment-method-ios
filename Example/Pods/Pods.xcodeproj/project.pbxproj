@@ -25,14 +25,14 @@
 		5F5559B71745502377F82434843C237D /* FlatPaymentMethod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A92A30DFD5D04C825875ADBFBD27BB4B /* FlatPaymentMethod-dummy.m */; };
 		699B07405369FE31EC4A51C83C1D27EB /* PaymentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EE9F5719D80ADD4E959CC88B335892 /* PaymentConstants.swift */; };
 		7E11D6A97BD08F1AB8A64B5B5B1AC1A1 /* CreditCardTypeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286DAA277A660A64B8D0D0DF57FE6B5D /* CreditCardTypeValidator.swift */; };
-		8BAAE900336E3A0392BF165AA66F4816 /* CreditCardDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C8E8674FE39DCFC2DF4377486F09E /* CreditCardDataSource.swift */; };
+		8BAAE900336E3A0392BF165AA66F4816 /* CreditCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443C8E8674FE39DCFC2DF4377486F09E /* CreditCardViewDataSource.swift */; };
 		8C38624D1E48909A6CB9A1471F72E6B9 /* amex.png in Resources */ = {isa = PBXBuildFile; fileRef = 774B10BE704DFFFCD405BD9C76FA7C71 /* amex.png */; };
 		95320FF53FDE92DB7283051181E6D524 /* uatp.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C06CB931B9785801D6BD3D872FEF87E /* uatp.png */; };
 		AE26FB9AB6CFC4D0EBD808CDA21EDA81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		B29F12873DF55888B7DE394202CE6124 /* FlatPaymentMethod.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC4EF6F7F468EB75E945F5ACE5C7CD92 /* FlatPaymentMethod.bundle */; };
 		BF1CC5AE211A6F8000CBF029 /* CreditCardValidationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CC5AD211A6F8000CBF029 /* CreditCardValidationState.swift */; };
 		BF1CC5B0211A70DC00CBF029 /* PrefixContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1CC5AF211A70DC00CBF029 /* PrefixContainable.swift */; };
-		D6E1974264D792611DA2182563928DE9 /* CreditCardDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D69DEA5C539B3994C0A20825C13ED1 /* CreditCardDelegate.swift */; };
+		D6E1974264D792611DA2182563928DE9 /* CreditCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D69DEA5C539B3994C0A20825C13ED1 /* CreditCardViewDelegate.swift */; };
 		DD1AB39DB6710A1BCA4A9DBC19DE568F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		DE00C353819D39F6688891D002A1FE37 /* Pods-FlatPaymentMethod_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6F1F5FB9F0A1281AEA420924B90320 /* Pods-FlatPaymentMethod_Example-dummy.m */; };
 		DFB9962C5DD5FB146F59C20C0EBCA8E5 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0818676D4438A3514A4C009A68C20F26 /* CreditCardType.swift */; };
@@ -81,7 +81,7 @@
 		3C92B23EE1E8DC65B944C7B8C5E60870 /* Pods-FlatPaymentMethod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlatPaymentMethod_Tests-dummy.m"; sourceTree = "<group>"; };
 		40AE7BDF916C248B64C401172E7FA974 /* Pods-FlatPaymentMethod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlatPaymentMethod_Tests-umbrella.h"; sourceTree = "<group>"; };
 		413987E72685F930321DE102605F7C7E /* CreditCardMapping.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardMapping.swift; path = FlatPaymentMethod/Classes/CreditCardMapping.swift; sourceTree = "<group>"; };
-		443C8E8674FE39DCFC2DF4377486F09E /* CreditCardDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardDataSource.swift; path = FlatPaymentMethod/Classes/CreditCardDataSource.swift; sourceTree = "<group>"; };
+		443C8E8674FE39DCFC2DF4377486F09E /* CreditCardViewDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardViewDataSource.swift; path = FlatPaymentMethod/Classes/CreditCardViewDataSource.swift; sourceTree = "<group>"; };
 		46388D367C2B37226EA9FEA28C9E898E /* FlatPaymentMethod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatPaymentMethod-prefix.pch"; sourceTree = "<group>"; };
 		502DEB3DD0C9D736A6EF39DB3DE36554 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CADBBF6EF1AFCC7CDBD215ECE2E27E /* Pods-FlatPaymentMethod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlatPaymentMethod_Tests.modulemap"; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		E900B20988BB1B34D218A3E325AFFD87 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA2E8B2CDB9665DE248CD5E640B63B80 /* diners-club.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "diners-club.png"; path = "FlatPaymentMethod/Assets/diners-club.png"; sourceTree = "<group>"; };
 		EDE8E3D2C7388562A6C56F5B94B950A3 /* Pods-FlatPaymentMethod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlatPaymentMethod_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		F6D69DEA5C539B3994C0A20825C13ED1 /* CreditCardDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardDelegate.swift; path = FlatPaymentMethod/Classes/CreditCardDelegate.swift; sourceTree = "<group>"; };
+		F6D69DEA5C539B3994C0A20825C13ED1 /* CreditCardViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardViewDelegate.swift; path = FlatPaymentMethod/Classes/CreditCardViewDelegate.swift; sourceTree = "<group>"; };
 		F7318C3A40CC92AEFD605108F6FAE14F /* dankort-white.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "dankort-white.png"; path = "FlatPaymentMethod/Assets/dankort-white.png"; sourceTree = "<group>"; };
 		F9ED5FE68C6CAFD4A813CC313FCAC6B2 /* Pods-FlatPaymentMethod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-FlatPaymentMethod_Example.modulemap"; sourceTree = "<group>"; };
 		FBCC77D9A4B0409BDA6A736966066598 /* jcb.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = jcb.png; path = FlatPaymentMethod/Assets/jcb.png; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				8D3A22897454C09A23F9EAB306769CCC /* CreditCard.swift */,
-				443C8E8674FE39DCFC2DF4377486F09E /* CreditCardDataSource.swift */,
-				F6D69DEA5C539B3994C0A20825C13ED1 /* CreditCardDelegate.swift */,
+				443C8E8674FE39DCFC2DF4377486F09E /* CreditCardViewDataSource.swift */,
+				F6D69DEA5C539B3994C0A20825C13ED1 /* CreditCardViewDelegate.swift */,
 				413987E72685F930321DE102605F7C7E /* CreditCardMapping.swift */,
 				0818676D4438A3514A4C009A68C20F26 /* CreditCardType.swift */,
 				286DAA277A660A64B8D0D0DF57FE6B5D /* CreditCardTypeValidator.swift */,
@@ -491,9 +491,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				273E80E65E3DCF074B5A3142F5B5B3B4 /* CreditCard.swift in Sources */,
-				8BAAE900336E3A0392BF165AA66F4816 /* CreditCardDataSource.swift in Sources */,
+				8BAAE900336E3A0392BF165AA66F4816 /* CreditCardViewDataSource.swift in Sources */,
 				BF1CC5AE211A6F8000CBF029 /* CreditCardValidationState.swift in Sources */,
-				D6E1974264D792611DA2182563928DE9 /* CreditCardDelegate.swift in Sources */,
+				D6E1974264D792611DA2182563928DE9 /* CreditCardViewDelegate.swift in Sources */,
 				BF1CC5B0211A70DC00CBF029 /* PrefixContainable.swift in Sources */,
 				4A5CB7579479D25B9A3D12B30B53E0DC /* CreditCardMapping.swift in Sources */,
 				DFB9962C5DD5FB146F59C20C0EBCA8E5 /* CreditCardType.swift in Sources */,

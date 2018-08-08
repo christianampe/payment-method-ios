@@ -1,5 +1,5 @@
 //
-//  CreditCardDelegate.swift
+//  CreditCardViewDelegate.swift
 //  FlatPaymentMethod
 //
 //  Created by Ampe on 8/7/18.
@@ -7,6 +7,6 @@
 
 import Foundation
 
-public protocol CreditCardDelegate {
+public protocol CreditCardViewDelegate {
     
 }

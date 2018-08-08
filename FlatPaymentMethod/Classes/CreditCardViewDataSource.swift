@@ -1,5 +1,5 @@
 //
-//  CreditCardDataSource.swift
+//  CreditCardViewDataSource.swift
 //  FlatPaymentMethod_Example
 //
 //  Created by Ampe on 8/7/18.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol CreditCardDataSource {
+public protocol CreditCardViewDataSource {
     
 }
