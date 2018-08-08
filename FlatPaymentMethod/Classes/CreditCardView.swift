@@ -18,6 +18,9 @@ open class CreditCardView: UIView {
     open weak var dateLabel: UILabel!
     open weak var nameLabel: UILabel!
     
+    // MARK: Properties
+    open lazy var validator = CreditCardValidator()
+    
     // MARK: Designable Initalizers
     public convenience init() {
         
@@ -88,6 +91,14 @@ open class CreditCardView: UIView {
     }
 }
 
+// MARK: - Public Setup Methods
+public extension CreditCardView {
+    func setSupportedCards(_ cards: [CreditCardType]) {
+        validator = CreditCardValidator(cards)
+    }
+}
+
+// MARK: - Private Setup Methods
 private extension CreditCardView {
     func initViews() {
         
