@@ -19,7 +19,7 @@ open class CreditCardView: UIView {
     open weak var nameLabel: UILabel!
     
     // MARK: Properties
-    open lazy var validator = CreditCardValidator()
+    open lazy var validator = CreditCardTypeValidator()
     
     // MARK: Designable Initalizers
     public convenience init() {
@@ -94,7 +94,33 @@ open class CreditCardView: UIView {
 // MARK: - Public Setup Methods
 public extension CreditCardView {
     func setSupportedCards(_ cards: [CreditCardType]) {
-        validator = CreditCardValidator(cards)
+        validator = CreditCardTypeValidator(cards)
+    }
+    
+    func validateNumber(_ number: String) {
+        updateView(for: validator.card(for: number), numberLength: number.count)
+    }
+}
+
+// MARK: - Update Methods For Credit Card Type Validation State
+private extension CreditCardView {
+    func updateView(for state: CreditCardTypeValidationState, numberLength: Int) {
+        switch state {
+        case .identified(let cardType):
+            
+        case .indeterminate(let potentialCardTypes):
+            
+        case .unsupported(let unsupportedCardTypes):
+            
+        case .invalid:
+            
+        }
+    }
+    
+    func updateNumberGrouping(for cardType: CreditCardType, numberLength: Int) {
+        guard let grouping = cardType.segmentGrouping[numberLength] else {
+            
+        }
     }
 }
 

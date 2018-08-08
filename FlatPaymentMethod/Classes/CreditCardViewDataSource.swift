@@ -9,5 +9,8 @@
 import Foundation
 
 public protocol CreditCardViewDataSource {
-    
+    var number: Int { get set }
+    var cvv: Int { get set }
+    var expiration: Date { get set }
+    var name: String { get set }
 }

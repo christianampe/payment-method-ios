@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class CreditCardValidator {
+open class CreditCardTypeValidator {
     open let supportedCardTypes: [CreditCardType]
     
     public init(_ supportedCardTypes: [CreditCardType] = CreditCardType.all) {
@@ -17,8 +17,8 @@ open class CreditCardValidator {
 }
 
 // MARK: - Public Methods
-public extension CreditCardValidator {
-    func card(for accountNumber: String) -> CreditCardValidationState {
-        return CreditCardValidationState(fromNumber: accountNumber, supportedCards: supportedCardTypes)
+public extension CreditCardTypeValidator {
+    func card(for accountNumber: String) -> CreditCardTypeValidationState {
+        return CreditCardTypeValidationState(fromNumber: accountNumber, supportedCards: supportedCardTypes)
     }
 }

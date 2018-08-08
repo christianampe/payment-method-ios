@@ -60,6 +60,40 @@ public extension CreditCardType {
     }
 }
 
+public extension CreditCardType {
+    static let defaultSegmentSize: Int = 4
+    
+    func segmentGrouping(for length: Int) -> [Int] {
+        if let assignedGrouping = segmentGrouping[length] {
+            return assignedGrouping
+        } else {
+            return defaultGrouping(for: length)
+        }
+    }
+    
+    func defaultGrouping(for length: Int) -> [Int] {
+        var defaultGrouping: [Int]
+        
+        let fullSegments: Int = Int(Double(length / CreditCardType.defaultSegmentSize).rounded(.down))
+        let remainder: Int = length % CreditCardType.defaultSegmentSize
+        
+        let fullSegmentArray: [Int] = Array(repeating: CreditCardType.defaultSegmentSize, count: fullSegments)
+        
+        defaultGrouping = fullSegmentArray
+        
+        if remainder > 0 {
+            guard remainder < CreditCardType.defaultSegmentSize else {
+                assert(false, "internal inconsistency - file a bug")
+                return defaultGrouping
+            }
+            
+            defaultGrouping.append(remainder)
+        }
+        
+        return defaultGrouping
+    }
+}
+
 // MARK: - Luhn Check Algorithm
 private extension CreditCardType {
     // per https://gist.github.com/cwagdev/635ce973e8e86da0403a
@@ -91,7 +125,7 @@ private extension CreditCardType {
     // Feb 3, 2017 article publish date
     // Aug 7, 2018 implementation date
     // Aug 7, 2018 implementation updated date
-    var requirement: CreditCardValidationRequirement {
+    var requirement: CreditCardTypeValidationRequirement {
         let prefixes: [PrefixContainable]
         let lengths: [Int]
         
@@ -146,7 +180,7 @@ private extension CreditCardType {
             lengths = [16]
         }
         
-        return CreditCardValidationRequirement(prefixes: prefixes, lengths: lengths)
+        return CreditCardTypeValidationRequirement(prefixes: prefixes, lengths: lengths)
     }
     
     // per https://baymard.com/checkout-usability/credit-card-patterns

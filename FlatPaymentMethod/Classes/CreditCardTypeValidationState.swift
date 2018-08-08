@@ -1,5 +1,5 @@
 //
-//  CreditCardValidationState.swift
+//  CreditCardTypeValidationState.swift
 //  FlatPaymentMethod
 //
 //  Created by Ampe on 8/7/18.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-public enum CreditCardValidationState: Equatable {
+public enum CreditCardTypeValidationState: Equatable {
     case identified(CreditCardType)
     case indeterminate(cards: [CreditCardType])
     case unsupported(cards: [CreditCardType])
     case invalid
 }
 
-public extension CreditCardValidationState {
+public extension CreditCardTypeValidationState {
     init(fromNumber number: String, supportedCards: [CreditCardType]) {
         guard let card = CreditCardType.all.first(where: { $0.isValid(number) }) else {
             self = .invalid

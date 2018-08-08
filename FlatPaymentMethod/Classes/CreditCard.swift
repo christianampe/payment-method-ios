@@ -9,7 +9,7 @@ import Foundation
 
 public struct CreditCard {
     public let number: Int
-    public let cvc: Int
+    public let cvv: Int
     public let expiration: Date
     public let name: String
 }

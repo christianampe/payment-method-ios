@@ -1,5 +1,5 @@
 //
-//  CreditCardValidationRequirement.swift
+//  CreditCardTypeValidationRequirement.swift
 //  FlatPaymentMethod
 //
 //  Created by Ampe on 8/7/18.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct CreditCardValidationRequirement {
+public struct CreditCardTypeValidationRequirement {
     public let prefixes: [PrefixContainable]
     public let lengths: [Int]
 }
 
-public extension CreditCardValidationRequirement {
+public extension CreditCardTypeValidationRequirement {
     func isValid(_ accountNumber: String) -> Bool {
         return isLengthValid(accountNumber) && isPrefixValid(accountNumber)
     }
@@ -26,7 +26,7 @@ public extension CreditCardValidationRequirement {
     }
 }
 
-private extension CreditCardValidationRequirement {
+private extension CreditCardTypeValidationRequirement {
     func isLengthValid(_ accountNumber: String) -> Bool {
         guard lengths.count > 0 else {
             return true
