@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CreditCardType {
+public enum CreditCardType: Equatable {
     case amex
     case unionPay
     case dinersClub(type: DinersClubType)
@@ -19,13 +19,13 @@ public enum CreditCardType {
     case visa(type: VisaType)
 }
 
-public enum DinersClubType {
+public enum DinersClubType: Equatable {
     case carteBlanche
     case international
     case usbc
 }
 
-public enum VisaType {
+public enum VisaType: Equatable {
     case visa
     case electron
 }
