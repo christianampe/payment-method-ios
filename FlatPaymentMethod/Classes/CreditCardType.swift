@@ -52,13 +52,38 @@ public enum VisaType: Equatable {
 
 public extension CreditCardType {
     func isValid(_ accountNumber: String) -> Bool {
-        return requirement.isValid(accountNumber)
+        return requirement.isValid(accountNumber) && luhnCheck(accountNumber)
     }
     
     func isPrefixValid(_ accountNumber: String) -> Bool {
         return requirement.isPrefixValid(accountNumber)
     }
 }
+
+// MARK: - Luhn Check Algorithm
+private extension CreditCardType {
+    // per https://gist.github.com/cwagdev/635ce973e8e86da0403a
+    func luhnCheck(_ cardNumber: String) -> Bool {
+        var sum: Int = 0
+        for (idx, element) in (cardNumber.reversed().map { String($0) }).enumerated() {
+            guard let digit = Int(element) else {
+                return false
+            }
+            
+            switch ((idx % 2 == 1), digit) {
+            case (true, 9):
+                sum += 9
+            case (true, 0...8):
+                sum += (digit * 2) % 9
+            default:
+                sum += digit
+            }
+        }
+        
+        return sum % 10 == 0
+    }
+}
+
 
 // MARK: - Constants For Determining Card Type
 private extension CreditCardType {
