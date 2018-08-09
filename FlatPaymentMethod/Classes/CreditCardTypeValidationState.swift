@@ -32,31 +32,54 @@ public extension CreditCardTypeValidationState {
     
     // MARK: Prefix Initalizer
     init(fromPrefix prefix: String, supportedCards: [CreditCardType]) {
-        
         // ensure that there are cards that can be supported
         guard supportedCards.count > 0 else {
             self = .invalid
             return
         }
         
-        //
+        // this is where the heavy lifting happens
+        // we diff all card prefixes against the entered prefix
+        // returns an array of valid card types
         let validCardTypes = CreditCardType.all.validate(prefix: prefix)
         
+        // if no cards match we know no card currently in circulation
+        // can match the prefix
+        // throw an invalid state
         guard validCardTypes.count > 0 else {
             self = .invalid
             return
         }
         
+        // construct sets of the valid card diff computed above
+        // and calculate its intersect against the set of supported
+        // cards provided by the client
+        // intersection returns the values which are contained in
+        // both sets
         let possibleSet: Set<CreditCardType> = Set(validCardTypes)
         let supportedSet: Set<CreditCardType> = Set(supportedCards)
         
-        guard supportedSet.intersection(possibleSet).count > 0 else {
+        // perform the intersection operation
+        // this returns a set which contains a list of all the
+        // cards that are supported by the client and match the
+        // prefix entered
+        let supportedValidCardTypes: Set<CreditCardType> = supportedSet.intersection(possibleSet)
+        
+        // if there are no like type cards returned from the join
+        // this tells us the vendor does not support the card/cards
+        // that matched the prefix
+        guard supportedValidCardTypes.count > 0 else {
             self = .unsupported(cards: validCardTypes)
             return
         }
         
-        if validCardTypes.count == 1 {
-            guard let card = validCardTypes.first else {
+        // if there is only one card returned by the intersection operation
+        // we know that this a card that can be identified
+        // otherwise there are multiple cards returned by this intersection
+        // operation which we return to the client with an indeterminate state
+        // with an associated value of an array of potentially valid card types
+        if supportedValidCardTypes.count == 1 {
+            guard let card = supportedValidCardTypes.first else {
                 assert(false, "internal inconsistency - file a bug")
                 self = .invalid
                 return
@@ -64,7 +87,7 @@ public extension CreditCardTypeValidationState {
             
             self = .identified(card)
         } else {
-            self = .indeterminate(cards: validCardTypes)
+            self = .indeterminate(cards: Array(supportedValidCardTypes))
         }
     }
 }
