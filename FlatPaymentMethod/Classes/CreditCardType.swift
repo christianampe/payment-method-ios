@@ -74,7 +74,7 @@ public extension CreditCardType {
 }
 
 public extension Array where Element == CreditCardType {
-    func prioritize(prefix: String) -> [Element] {
+    func validate(prefix: String) -> [Element] {
         // have an array of credit cards and length of prefix to compare against
         // if there are multiple cards we want to find the card with the number of digits closest to the prefix length
         // need to filter out non-matching prefixes

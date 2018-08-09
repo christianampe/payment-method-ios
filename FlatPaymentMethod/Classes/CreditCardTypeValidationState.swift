@@ -32,28 +32,31 @@ public extension CreditCardTypeValidationState {
     
     // MARK: Prefix Initalizer
     init(fromPrefix prefix: String, supportedCards: [CreditCardType]) {
+        
+        // ensure that there are cards that can be supported
         guard supportedCards.count > 0 else {
             self = .invalid
             return
         }
         
-        let prioritizedCardTypes = CreditCardType.all.prioritize(prefix: prefix)
+        //
+        let validCardTypes = CreditCardType.all.validate(prefix: prefix)
         
-        guard prioritizedCardTypes.count > 0 else {
+        guard validCardTypes.count > 0 else {
             self = .invalid
             return
         }
         
-        let possibleSet: Set<CreditCardType> = Set(prioritizedCardTypes)
+        let possibleSet: Set<CreditCardType> = Set(validCardTypes)
         let supportedSet: Set<CreditCardType> = Set(supportedCards)
         
         guard supportedSet.intersection(possibleSet).count > 0 else {
-            self = .unsupported(cards: prioritizedCardTypes)
+            self = .unsupported(cards: validCardTypes)
             return
         }
         
-        if prioritizedCardTypes.count == 1 {
-            guard let card = prioritizedCardTypes.first else {
+        if validCardTypes.count == 1 {
+            guard let card = validCardTypes.first else {
                 assert(false, "internal inconsistency - file a bug")
                 self = .invalid
                 return
@@ -61,7 +64,7 @@ public extension CreditCardTypeValidationState {
             
             self = .identified(card)
         } else {
-            self = .indeterminate(cards: prioritizedCardTypes)
+            self = .indeterminate(cards: validCardTypes)
         }
     }
 }
