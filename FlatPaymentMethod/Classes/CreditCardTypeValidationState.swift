@@ -15,6 +15,7 @@ public enum CreditCardTypeValidationState: Equatable {
 }
 
 public extension CreditCardTypeValidationState {
+    // MARK: Explicit Initalizer
     init(fromNumber number: String, supportedCards: [CreditCardType]) {
         guard let card = CreditCardType.all.first(where: { $0.isValid(number) }) else {
             self = .invalid
@@ -29,14 +30,14 @@ public extension CreditCardTypeValidationState {
         self = .identified(card)
     }
     
+    // MARK: Prefix Initalizer
     init(fromPrefix prefix: String, supportedCards: [CreditCardType]) {
         guard supportedCards.count > 0 else {
             self = .invalid
             return
         }
         
-        let possibleCardTypes = CreditCardType.all.filter { $0.isPrefixValid(prefix) }
-        let prioritizedCardTypes = possibleCardTypes.prioritize(prefix: prefix)
+        let prioritizedCardTypes = CreditCardType.all.prioritize(prefix: prefix)
         
         guard prioritizedCardTypes.count > 0 else {
             self = .invalid
@@ -53,15 +54,27 @@ public extension CreditCardTypeValidationState {
         
         if prioritizedCardTypes.count == 1 {
             guard let card = prioritizedCardTypes.first else {
-                self = .invalid
-                
                 assert(false, "internal inconsistency - file a bug")
+                self = .invalid
                 return
             }
             
             self = .identified(card)
         } else {
             self = .indeterminate(cards: prioritizedCardTypes)
+        }
+    }
+}
+
+public extension CreditCardTypeValidationState {
+    var cards: [CreditCardType]? {
+        switch self {
+        case .identified(let identifiedCard):
+            return [identifiedCard]
+        case .indeterminate(let identifiedCards):
+            return identifiedCards
+        default:
+            return nil
         }
     }
 }

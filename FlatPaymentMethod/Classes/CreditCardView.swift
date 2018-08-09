@@ -110,10 +110,16 @@ private extension CreditCardView {
             updateNumberGrouping(with: grouping)
         }
         
+        // todo remove after testing is complete
+        if let cards = state.cards {
+            cards.forEach { card in
+                print("Potential Card Type: \(card)")
+            }
+        }
     }
     
     func updateNumberGrouping(with grouping: [Int]) {
-        print(grouping)
+        print("Segment Grouping: \(grouping)")
     }
 }
 
