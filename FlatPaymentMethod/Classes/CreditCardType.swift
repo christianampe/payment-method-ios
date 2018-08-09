@@ -87,6 +87,8 @@ public extension Array where Element == CreditCardType {
         // prefixes of each card
         forEach { card in
             
+            // ensure that this card has any valid prefixes
+            // before continuing into the heavier lifting processes
             guard card.isPrefixValid(prefix) else {
                 return
             }
