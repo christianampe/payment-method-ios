@@ -83,6 +83,8 @@ public extension Array where Element == CreditCardType {
         var minPrefixLength: Int = 0
         var potentialCardsDictionary: [Int: Set<CreditCardType>] = [:]
         
+        // itterate over every card in the array and look at the potential
+        // prefixes of each card
         forEach { card in
             card.requirement.prefixes.forEach { potentialPrefix in
                 
@@ -132,6 +134,7 @@ public extension Array where Element == CreditCardType {
         // than the minPrefixLength
         var possibleCards: Set<CreditCardType> = []
         
+        // extract all lengths from the dictionary
         potentialCardsDictionary.keys
             .filter { length in
                 // take all lengths equal to or larger than the minimum prefix length
