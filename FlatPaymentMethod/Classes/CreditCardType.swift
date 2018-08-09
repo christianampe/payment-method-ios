@@ -71,9 +71,81 @@ public extension CreditCardType {
             return Mathematics.defaultGrouping(for: length)
         }
     }
-    
-    func prioritize(cards: [CreditCardType]) -> CreditCardType {
+}
+
+public extension Array where Element == CreditCardType {
+    func prioritize(prefix: String) -> [Element] {
+        // have an array of credit cards and length of prefix to compare against
+        // if there are multiple cards we want to find the card with the number of digits closest to the prefix length
+        // need to filter out non-matching prefixes
+        // if there are multiple cards with this same prefix length, return an array of cards
         
+        var minPrefixLength: Int = 0
+        var potentialCardsDictionary: [Int: [CreditCardType]] = [:]
+        
+        forEach { card in
+            card.requirement.prefixes.forEach { potentialPrefix in
+                
+                // potential prefix matches input value
+                // this is to avoid adding a card which has
+                // no matching prefix to the input
+                guard potentialPrefix.hasCommonPrefix(with: prefix) else {
+                    return
+                }
+                
+                // ensure potential prefix length is greater than or equal to
+                // the running minimum prefix length count
+                // this is to avoid adding cards with shorter prefixes
+                // when the prefix matches a more specific prefix
+                guard potentialPrefix.count >= minPrefixLength else {
+                    return
+                }
+                
+                // add card belonging to potential prefix to the dictionary
+                // of potential cards with a value of the potential
+                // prefixes length
+                if potentialCardsDictionary[potentialPrefix.count] != nil {
+                    potentialCardsDictionary[potentialPrefix.count]?.append(card)
+                } else {
+                    potentialCardsDictionary[potentialPrefix.count] = [card]
+                }
+                
+                // ensure the length of the potential prefix does not
+                // exceed that of the entered prefix
+                // this is to avoid having a minimum prefix length
+                // which is larger than the current length of the entered
+                // prefix
+                // if this were to happen, we would exclude cards which
+                // shoud still be included in the set of potential cards
+                guard potentialPrefix.count <= prefix.count  else {
+                    return
+                }
+                
+                // update the minimum prefix length to that of the
+                // potential prefix length
+                minPrefixLength = potentialPrefix.count
+            }
+        }
+        
+        // we want to include all cards with the minPrefixLength
+        // as well as all cards with potentialPrefix values longer
+        // than the minPrefixLength
+        var possibleCards: [CreditCardType] = []
+        
+        potentialCardsDictionary.keys
+            .filter { length in
+                // take all lengths equal to or larger than the minimum prefix length
+                length >= minPrefixLength
+            }.forEach { length in
+                // extract cards for these lengths from the dictionary
+                guard let cards = potentialCardsDictionary[length] else {
+                    return
+                }
+                // construct array of cards from these values
+                possibleCards += cards
+        }
+        
+        return possibleCards
     }
 }
 
