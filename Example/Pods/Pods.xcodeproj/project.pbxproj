@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		003A1FF0CAE6D0EA7F6DAA3BACF27AEB /* interpay.png in Resources */ = {isa = PBXBuildFile; fileRef = 219579736EDA5693AF7B34B9495E44BA /* interpay.png */; };
+		003A1FF0CAE6D0EA7F6DAA3BACF27AEB /* interpayment.png in Resources */ = {isa = PBXBuildFile; fileRef = 219579736EDA5693AF7B34B9495E44BA /* interpayment.png */; };
 		01D1B79D2207A62192643B82E7250737 /* Pods-FlatPaymentMethod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C92B23EE1E8DC65B944C7B8C5E60870 /* Pods-FlatPaymentMethod_Tests-dummy.m */; };
 		0692847F3441DB8244167762A919B544 /* FlatPaymentMethod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF241145FC2B58E3A309B7F7BB1E33EC /* FlatPaymentMethod-dummy.m */; };
 		16C154023C60872F827CAA9ADFBF8151 /* FlatPaymentMethod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B095211C0732CAAF4BBF96A6E421A42A /* FlatPaymentMethod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,7 +75,7 @@
 		17E25DA283C15CD06355DE0447C25F1D /* FlatPaymentMethod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatPaymentMethod-prefix.pch"; sourceTree = "<group>"; };
 		1A2812AE71A951B2DBC2BC596BC58C99 /* visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = visa.png; path = FlatPaymentMethod/Assets/visa.png; sourceTree = "<group>"; };
 		1D9FB13B0F3727EC4D76FAAAD9D76CD2 /* uatp.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = uatp.png; path = FlatPaymentMethod/Assets/uatp.png; sourceTree = "<group>"; };
-		219579736EDA5693AF7B34B9495E44BA /* interpay.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = interpay.png; path = FlatPaymentMethod/Assets/interpay.png; sourceTree = "<group>"; };
+		219579736EDA5693AF7B34B9495E44BA /* interpayment.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = interpayment.png; path = FlatPaymentMethod/Assets/interpayment.png; sourceTree = "<group>"; };
 		22ED13B79ED398C21584E9BCCBFCA355 /* Pods-FlatPaymentMethod_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlatPaymentMethod_Example-resources.sh"; sourceTree = "<group>"; };
 		2A0A5EE6AE217A939C40608E3F8B24DD /* Pods-FlatPaymentMethod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlatPaymentMethod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		31E3EFD27C18ABBD13F08B69BC941B02 /* CreditCardType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardType.swift; path = FlatPaymentMethod/Classes/CreditCardType.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				B699E502D171E3122D12F815ECEB0F83 /* dankort-white.png */,
 				AEA5F49F72C8450A61D1410A4D441660 /* diners-club.png */,
 				C6854584F05622B62DBA025D61C56751 /* discover.png */,
-				219579736EDA5693AF7B34B9495E44BA /* interpay.png */,
+				219579736EDA5693AF7B34B9495E44BA /* interpayment.png */,
 				E218EF43B5E1FA84C3300B09BF7649E3 /* jcb.png */,
 				3715964BB6BA280718F4EE6B57C704E1 /* maestro.png */,
 				719CD9F4324E20ECE18B11B9C0619DA6 /* mastercard.png */,
@@ -464,7 +464,7 @@
 				796030F3577B705A106821B4830B965D /* dankort.png in Resources */,
 				6FFEB77A70D5A285007F650E69607B70 /* diners-club.png in Resources */,
 				D6D01B4FD66A90E2A48CDA473FC09AD3 /* discover.png in Resources */,
-				003A1FF0CAE6D0EA7F6DAA3BACF27AEB /* interpay.png in Resources */,
+				003A1FF0CAE6D0EA7F6DAA3BACF27AEB /* interpayment.png in Resources */,
 				EC6465751AA27FAD63A1870016F22A34 /* jcb.png in Resources */,
 				98F91BBA129078A359CEB61BED0EF22F /* maestro.png in Resources */,
 				744799132713701C201171D6012153E8 /* mastercard.png in Resources */,
