@@ -81,7 +81,7 @@ public extension Array where Element == CreditCardType {
         // if there are multiple cards with this same prefix length, return an array of cards
         
         var minPrefixLength: Int = 0
-        var potentialCardsDictionary: [Int: [CreditCardType]] = [:]
+        var potentialCardsDictionary: [Int: Set<CreditCardType>] = [:]
         
         forEach { card in
             card.requirement.prefixes.forEach { potentialPrefix in
@@ -105,7 +105,7 @@ public extension Array where Element == CreditCardType {
                 // of potential cards with a value of the potential
                 // prefixes length
                 if potentialCardsDictionary[potentialPrefix.count] != nil {
-                    potentialCardsDictionary[potentialPrefix.count]?.append(card)
+                    potentialCardsDictionary[potentialPrefix.count]?.insert(card)
                 } else {
                     potentialCardsDictionary[potentialPrefix.count] = [card]
                 }
@@ -130,7 +130,7 @@ public extension Array where Element == CreditCardType {
         // we want to include all cards with the minPrefixLength
         // as well as all cards with potentialPrefix values longer
         // than the minPrefixLength
-        var possibleCards: [CreditCardType] = []
+        var possibleCards: Set<CreditCardType> = []
         
         potentialCardsDictionary.keys
             .filter { length in
@@ -142,10 +142,12 @@ public extension Array where Element == CreditCardType {
                     return
                 }
                 // construct array of cards from these values
-                possibleCards += cards
+                cards.forEach { card in
+                    possibleCards.insert(card)
+                }
         }
         
-        return possibleCards
+        return Array(possibleCards)
     }
 }
 
