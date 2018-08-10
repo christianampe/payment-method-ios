@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PaymentValidator
 
 @IBDesignable
 open class CreditCardView: UIView {
