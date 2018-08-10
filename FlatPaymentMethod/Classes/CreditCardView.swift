@@ -117,6 +117,8 @@ private extension CreditCardView {
 
 // MARK: - Private Setup Methods
 private extension CreditCardView {
+    
+    // MARK: Style Views
     func initViews() {
         
         cardView.layer.borderWidth = 1.0
@@ -153,6 +155,7 @@ private extension CreditCardView {
         nameLabel.text = "CHRISTIAN AMPE"
     }
     
+    // MARK: Add Views To Super View
     func addViews() {
         
         addSubview(cardView)
@@ -163,6 +166,7 @@ private extension CreditCardView {
         addSubview(nameLabel)
     }
     
+    // MARK: Call Add Constraints Methods
     func addConstraints() {
         
         addCardViewConstraints()
@@ -173,6 +177,7 @@ private extension CreditCardView {
         addNameLabelConstraints()
     }
     
+    // MARK: Add Constraints To Card View
     func addCardViewConstraints() {
         
         cardView.translatesAutoresizingMaskIntoConstraints = false
@@ -192,6 +197,7 @@ private extension CreditCardView {
         cardView.layoutIfNeeded()
     }
     
+    // MARK: Add Constraints To Card Logo
     func addCardLogoConstraints() {
         
         cardLogo.translatesAutoresizingMaskIntoConstraints = false
@@ -202,6 +208,7 @@ private extension CreditCardView {
         cardLogo.widthAnchor.constraint(equalToConstant: cardView.frame.width/5).isActive = true
     }
     
+    // MARK: Add Constraints To Name Label
     func addNameLabelConstraints() {
         
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -212,6 +219,7 @@ private extension CreditCardView {
         nameLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/10).isActive = true
     }
     
+    // MARK: Add Constraints To Date Label
     func addDateLabelConstraints() {
         
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -222,6 +230,7 @@ private extension CreditCardView {
         dateLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/15).isActive = true
     }
     
+    // MARK: Add Constraints To CVV Label
     func addCVVLabelConstraints() {
         
         cvvLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -232,6 +241,7 @@ private extension CreditCardView {
         cvvLabel.heightAnchor.constraint(equalToConstant: cardView.frame.height/20).isActive = true
     }
     
+    // MARK: Add Constraints To Number Label
     func addNumberLabelConstraints() {
         
         numberLabel.translatesAutoresizingMaskIntoConstraints = false
