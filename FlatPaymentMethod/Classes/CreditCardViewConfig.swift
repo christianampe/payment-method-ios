@@ -61,6 +61,14 @@ public extension CreditCardStyle {
             return .white
         }
     }
+    
+    var numberSecurity: CardNumberSecurityStyle {
+        return .default
+    }
+    
+    var ccvSecurity: CardCVVSecurityStyle {
+        return .default
+    }
 }
 
 public extension CreditCardStyle {
@@ -81,6 +89,14 @@ public extension CreditCardStyle {
             
             return lightLogo
         }
+    }
+    
+    func grouping(for cardType: CreditCardType, with length: Int) -> [Int] {
+        return cardType.segmentGrouping(for: length)
+    }
+    
+    func cvvLength(for cardType: CreditCardType) -> Int {
+        return cardType.cvvLength
     }
 }
 
@@ -119,7 +135,15 @@ public enum CardNumberSecurityStyle {
     case off
 }
 
+public extension CardNumberSecurityStyle {
+    public static var `default`: CardNumberSecurityStyle = .show(last: 4)
+}
+
 public enum CardCVVSecurityStyle {
     case on
     case off
+}
+
+public extension CardCVVSecurityStyle {
+    public static var `default`: CardCVVSecurityStyle = .on
 }

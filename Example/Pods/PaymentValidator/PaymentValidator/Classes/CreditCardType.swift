@@ -206,6 +206,21 @@ public extension Array where Element == CreditCardType {
     }
 }
 
+// MARK - Public Constants For Determining Card Type
+public extension CreditCardType {
+    // per scraping the internet
+    // Aug 7, 2018 implementation date
+    // Aug 7, 2018 implementation updated date
+    var cvvLength: Int {
+        switch self {
+        case .amex:
+            return 4
+        default:
+            return 3
+        }
+    }
+}
+
 // MARK: - Constants For Determining Card Type
 private extension CreditCardType {
     // per https://baymard.com/checkout-usability/credit-card-patterns
@@ -314,18 +329,6 @@ private extension CreditCardType {
             return [15: [4, 5, 6]]
         case .interPayment:
             return [16: [4, 4, 4, 4]]
-        }
-    }
-    
-    // per scraping the internet
-    // Aug 7, 2018 implementation date
-    // Aug 7, 2018 implementation updated date
-    var cvvLength: Int {
-        switch self {
-        case .amex:
-            return 4
-        default:
-            return 3
         }
     }
 }
