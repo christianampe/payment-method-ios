@@ -22,6 +22,9 @@ open class CreditCardView: UIView {
     // MARK: Properties
     open lazy var validator = CreditCardTypeValidator()
     
+    open var delegate: CreditCardViewDelegate?
+    open var dataSource: CreditCardViewDataSource?
+    
     // MARK: Designable Initalizers
     public convenience init() {
         
