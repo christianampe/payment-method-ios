@@ -24,5 +24,10 @@
     "FlatPaymentMethod": [
       "FlatPaymentMethod/Assets/*.png"
     ]
+  },
+  "dependencies": {
+    "PaymentValidator": [
+      "~> 0.0.2"
+    ]
   }
 }

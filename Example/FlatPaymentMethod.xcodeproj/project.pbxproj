@@ -319,10 +319,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlatPaymentMethod_Example/Pods-FlatPaymentMethod_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FlatPaymentMethod/FlatPaymentMethod.framework",
+				"${BUILT_PRODUCTS_DIR}/PaymentValidator/PaymentValidator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FlatPaymentMethod.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PaymentValidator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
