@@ -15,7 +15,11 @@ public protocol CreditCardViewDataSource {
     var expiration: Date { get set }
     var name: String { get set }
     
-    func logo(for cardType: CreditCardType) -> UIImage
-    func segmentGrouping(for cardType: CreditCardType, with length: Int) -> [Int]
-    
+    func style(for cardType: CreditCardType) -> CreditCardStyle
+}
+
+public extension CreditCardViewDataSource {
+    func style(for cardType: CreditCardType) -> CreditCardStyle {
+        return cardType.style
+    }
 }

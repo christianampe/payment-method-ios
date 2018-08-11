@@ -13,6 +13,11 @@ public enum CreditCardStyle {
 }
 
 public extension CreditCardStyle {
+    public static let defaultBorderWidth: CGFloat = 1
+    public static let defaultBorderColor: UIColor = .black
+}
+
+public extension CreditCardStyle {
     var backgroundColor: UIColor {
         switch self {
         case .clear:
@@ -84,6 +89,44 @@ public extension CreditCardStyle {
     
     func cvvLength(for cardType: CreditCardType) -> Int {
         return cardType.cvvLength
+    }
+}
+
+public extension CreditCardType {
+    var style: CreditCardStyle {
+        switch self {
+        case .amex:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .dankort:
+            return .fill(backgroundColor: .red)
+        case .dinersClub:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .discover:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .interPayment:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .maestro:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .masterCard:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .jcb:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .uatp:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .unionPay:
+            return .clear(borderWidth: CreditCardStyle.defaultBorderWidth,
+                          borderColor: CreditCardStyle.defaultBorderColor)
+        case .visa:
+            return .fill(backgroundColor: .blue)
+        }
     }
 }
 
