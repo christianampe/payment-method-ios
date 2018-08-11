@@ -106,6 +106,25 @@ public extension CreditCardView {
     }
 }
 
+// MARK: - Public Update Label Methods
+public extension CreditCardView {
+    func updateAccountLabel(with value: String) {
+        
+    }
+    
+    func updateCVVLabel(with value: String) {
+        
+    }
+    
+    func updateExpirationDateLabel(with value: String) {
+        
+    }
+    
+    func updateNameLabel(with value: String) {
+        
+    }
+}
+
 // MARK: - Update Methods For Credit Card Type Validation State
 private extension CreditCardView {
     func updateView(for state: CreditCardTypeValidationState, numberLength: Int) {
