@@ -25,6 +25,43 @@ open class CreditCardView: UIView {
     open var delegate: CreditCardViewDelegate?
     open var dataSource: CreditCardViewDataSource?
     
+    // MARK: IBInspectables
+    @IBInspectable
+    open var number: String {
+        didSet {
+            
+        }
+    }
+    
+    @IBInspectable
+    open var cvv: String {
+        didSet {
+            
+        }
+    }
+    
+    @IBInspectable
+    open var date: String {
+        didSet {
+            
+        }
+    }
+    
+    @IBInspectable
+    open var name: String {
+        didSet {
+            
+        }
+    }
+    
+    @IBInspectable
+    open var logo: String {
+        didSet {
+            
+        }
+    }
+    
+    
     // MARK: Designable Initalizers
     public convenience init() {
         
@@ -108,7 +145,7 @@ public extension CreditCardView {
 
 // MARK: - Public Update Label Methods
 public extension CreditCardView {
-    func updateAccountLabel(with value: String) {
+    func updateNumberLabel(with value: String) {
         
     }
     
@@ -169,12 +206,6 @@ private extension CreditCardView {
         nameLabel.minimumScaleFactor = 0.1
         nameLabel.lineBreakMode = .byClipping
         nameLabel.numberOfLines = 0
-        
-        cardLogo.image = UIImage(named: "mastercard.png", in: Bundle(for: CreditCardView.self), compatibleWith: nil)
-        numberLabel.text = "••••  ••••  ••••  3847"
-        cvvLabel.text = "•••"
-        dateLabel.text = "07/22"
-        nameLabel.text = "CHRISTIAN AMPE"
     }
     
     // MARK: Add Views To Super View
