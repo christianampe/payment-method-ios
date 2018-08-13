@@ -61,7 +61,6 @@ open class CreditCardView: UIView {
         }
     }
     
-    
     // MARK: Designable Initalizers
     public convenience init() {
         

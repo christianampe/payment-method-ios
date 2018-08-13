@@ -18,6 +18,11 @@ public extension CreditCardStyle {
 }
 
 public extension CreditCardStyle {
+    public static let `default`: CreditCardStyle = .clear(borderWidth: defaultBorderWidth,
+                                                          borderColor: defaultBorderColor)
+}
+
+public extension CreditCardStyle {
     var backgroundColor: UIColor {
         switch self {
         case .clear:
