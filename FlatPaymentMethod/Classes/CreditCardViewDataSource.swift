@@ -18,6 +18,7 @@ public protocol CreditCardViewDataSource {
     func style(for cardType: CreditCardType) -> CreditCardStyle
 }
 
+// MARK: - Default Implementations
 public extension CreditCardViewDataSource {
     func style(for cardType: CreditCardType) -> CreditCardStyle {
         return cardType.style

@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 public struct CreditCardViewConfig {
     public let backgroundColor: UIColor
     public let borderWidth: CGFloat
