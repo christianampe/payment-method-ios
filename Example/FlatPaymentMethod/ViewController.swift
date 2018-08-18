@@ -7,26 +7,5 @@
 //
 
 import UIKit
-import FlatPaymentMethod
 
-class ViewController: UIViewController {
-    @IBOutlet weak var creditCard: CreditCardView!
-    
-    @IBOutlet weak var textField: UITextField!
-    
-    
-    @IBAction func textFieldEdited(_ sender: Any) {
-        guard let text = textField.text else {
-            return
-        }
-        
-        creditCard.validateNumber(text)
-    }
-}
-
-extension ViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-}
-
+class ViewController: UIViewController {}
