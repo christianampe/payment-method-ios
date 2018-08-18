@@ -20,17 +20,12 @@
   },
   "swift_version": "4.1",
   "source_files": "FlatPaymentMethod/Classes/**/*",
-  "resource_bundles": {
-    "FlatPaymentMethod": [
-      "FlatPaymentMethod/Assets/*.png"
-    ]
-  },
   "dependencies": {
     "PaymentValidator": [
-      "~> 0.0.2"
+      "~> 0.0.3"
     ],
     "FlatCreditCard": [
-      "~> 0.0.2"
+      "~> 0.0.3"
     ]
   }
 }
