@@ -3,7 +3,7 @@ platform :ios, '9.3'
 
 target 'FlatPaymentMethod_Example' do
     pod 'FlatPaymentMethod', :path => '../'
-    pod 'PaymentValidator', '~> 0.0.4'
+    pod 'PaymentValidator', '~> 0.0.5'
     pod 'FlatCreditCard', '~> 0.0.3'
     
     target 'FlatPaymentMethod_Tests' do
