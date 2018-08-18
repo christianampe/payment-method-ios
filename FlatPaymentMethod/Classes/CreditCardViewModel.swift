@@ -19,17 +19,6 @@ public class CreditCardViewModel: FlatCreditCard.CreditCardViewModel {
     // MARK: Stored Variables
     public var delegate: CreditCardViewModelDelegate
     
-    // MARK: Required Initalizer
-    public required init(_ card: CreditCard,
-                         delegate: CreditCardViewModelDelegate) {
-        
-        self.creditCard = card
-        self.delegate = delegate
-        self.validator = CreditCardTypeValidator()
-        self.numberSecurity = .off
-        self.cvvSecurity = .off
-    }
-    
     // MARK: Custom Initalizer
     public init(_ card: CreditCard,
                 delegate: CreditCardViewModelDelegate,
