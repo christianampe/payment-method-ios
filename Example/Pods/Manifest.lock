@@ -2,13 +2,13 @@ PODS:
   - FlatCreditCard (0.0.3)
   - FlatPaymentMethod (0.0.1):
     - FlatCreditCard (~> 0.0.3)
-    - PaymentValidator (~> 0.0.4)
-  - PaymentValidator (0.0.4)
+    - PaymentValidator (~> 0.0.5)
+  - PaymentValidator (0.0.5)
 
 DEPENDENCIES:
   - FlatCreditCard (~> 0.0.3)
   - FlatPaymentMethod (from `../`)
-  - PaymentValidator (~> 0.0.4)
+  - PaymentValidator (~> 0.0.5)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -21,9 +21,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FlatCreditCard: 1541818e1d872234003b602a559a891e32f8df32
-  FlatPaymentMethod: 6cc33f7f3a626d5c9f10871f530898b080b1dd33
-  PaymentValidator: 1822dff51dbc9f8bb05728677dcdc884bbbb9bad
+  FlatPaymentMethod: f78610013e7ada05c407c917faff5ba0dacdbfbf
+  PaymentValidator: 84b9fc61a4f36e204176ebbc0b98f3781ec9f334
 
-PODFILE CHECKSUM: c5fd12fc37f0d74a22f6f862226475b5b04196a4
+PODFILE CHECKSUM: 04f08b2349f1af6abd4ae1cc32f3fd49a206a170
 
 COCOAPODS: 1.5.0
