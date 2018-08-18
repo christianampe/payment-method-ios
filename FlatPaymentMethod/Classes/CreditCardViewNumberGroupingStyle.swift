@@ -13,12 +13,6 @@ public enum CreditCardViewNumberGroupingStyle {
 }
 
 public extension CreditCardViewNumberGroupingStyle {
-    public static let `default`: CreditCardViewNumberGroupingStyle = .custom(grouping: [4, 4, 4, 4],
-                                                                             separator: "   ",
-                                                                             addRemainderSection: false)
-}
-
-public extension CreditCardViewNumberGroupingStyle {
     public func groupedText(for input: String) -> String {
         switch self {
         case .none:

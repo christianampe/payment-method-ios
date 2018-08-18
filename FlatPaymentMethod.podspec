@@ -11,9 +11,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '9.3'
     s.swift_version         = '4.1'
     s.source_files = 'FlatPaymentMethod/Classes/**/*'
-    s.resource_bundles = {
-        'FlatPaymentMethod' => ['FlatPaymentMethod/Assets/*.png']
-    }
-    s.dependency 'PaymentValidator', '~> 0.0.2'
-    s.dependency 'FlatCreditCard', '~> 0.0.2'
+    s.dependency 'PaymentValidator', '~> 0.0.3'
+    s.dependency 'FlatCreditCard', '~> 0.0.3'
 end

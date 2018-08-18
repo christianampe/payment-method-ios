@@ -32,11 +32,6 @@ public extension CardNumberSecurityStyle {
     }
 }
 
-public extension CardNumberSecurityStyle {
-    public static var `default`: CardNumberSecurityStyle = .show(last: 4,
-                                                                 secureCharacter: "•")
-}
-
 public enum CardCVVSecurityStyle {
     case on(secureCharacter: Character)
     case off
