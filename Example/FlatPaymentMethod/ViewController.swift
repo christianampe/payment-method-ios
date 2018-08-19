@@ -25,6 +25,10 @@ extension ViewController {
 
 extension ViewController {
     @IBAction func valueChanged(_ sender: Any) {
-        creditCard.number = textField.text ?? ""
+        guard let number = textField.text, !number.isEmpty else {
+            return
+        }
+        
+        creditCard.number = number
     }
 }

@@ -39,8 +39,8 @@ public extension PaymentViewModel {
         switch validator.card(for: card.number) {
         case .identified(let card):
             updateLogo(to: card.logoDark)
-        case .indeterminate:
-            break
+        case .indeterminate(let cards):
+            updateLogo(to: cards.first?.logoDark)
         case .unsupported:
             break
         case .invalid:
