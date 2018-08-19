@@ -1,5 +1,5 @@
 //
-//  CreditCardViewModel.swift
+//  PaymentViewModelViewModel.swift
 //  FlatCreditCard
 //
 //  Created by Ampe on 8/17/18.
@@ -8,7 +8,7 @@
 import FlatCreditCard
 import PaymentValidator
 
-public class CreditCardViewModel: FlatCreditCard.CreditCardViewModel {
+public class PaymentViewModel: CreditCardViewModel {
     
     // MARK: Stored Constants
     public let creditCard: CreditCard
@@ -20,16 +20,37 @@ public class CreditCardViewModel: FlatCreditCard.CreditCardViewModel {
     public var delegate: CreditCardViewModelDelegate
     
     // MARK: Custom Initalizer
-    public init(_ card: CreditCard,
+    public init(_ creditCard: CreditCard = .default,
                 delegate: CreditCardViewModelDelegate,
                 supportedCards: [CreditCardType] = CreditCardType.all,
                 numberSecurity: CardNumberSecurityStyle = .off,
                 cvvSecurity: CardCVVSecurityStyle = .off) {
         
-        self.creditCard = card
+        self.creditCard = creditCard
         self.delegate = delegate
         self.validator = CreditCardTypeValidator(supportedCards)
         self.numberSecurity = numberSecurity
         self.cvvSecurity = cvvSecurity
+    }
+}
+
+public extension PaymentViewModel {
+    public func number(for card: CreditCard) -> String {
+        switch validator.card(for: card.number) {
+        case .identified(let card):
+            updateLogo(to: card.logoDark)
+        case .indeterminate:
+            break
+        case .unsupported:
+            break
+        case .invalid:
+            break
+        }
+        
+        return numberSecurity.secureText(for: card.number)
+    }
+    
+    public func cvv(for card: CreditCard) -> String {
+        return cvvSecurity.secureText(for: card.cvv)
     }
 }

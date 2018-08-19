@@ -20,8 +20,38 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ju-Az-ibF" customClass="CreditCardView" customModule="FlatCreditCard">
+                                <rect key="frame" x="48" y="44" width="279" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="gYD-zs-zTh"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IKa-uU-udt">
+                                <rect key="frame" x="48" y="212" width="279" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="xaJ-8k-gHl"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Ju-Az-ibF" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="48" id="2Fv-rL-vHq"/>
+                            <constraint firstAttribute="trailing" secondItem="IKa-uU-udt" secondAttribute="trailing" constant="48" id="Q9n-Mw-kud"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ju-Az-ibF" secondAttribute="trailing" constant="48" id="UTA-O1-yAR"/>
+                            <constraint firstItem="IKa-uU-udt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="48" id="X1i-rk-ZCc"/>
+                            <constraint firstItem="IKa-uU-udt" firstAttribute="top" secondItem="5Ju-Az-ibF" secondAttribute="bottom" constant="8" id="jRO-M1-FBZ"/>
+                            <constraint firstItem="5Ju-Az-ibF" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="24" id="u3d-De-UBo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="creditCard" destination="5Ju-Az-ibF" id="BGe-9s-uMP"/>
+                        <outlet property="textField" destination="IKa-uU-udt" id="opZ-jv-a54"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

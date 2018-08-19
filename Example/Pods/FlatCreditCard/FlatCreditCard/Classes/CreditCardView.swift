@@ -71,7 +71,7 @@ open class CreditCardView: UIView {
     }
     
     @IBInspectable
-    public var logo: UIImage? = CreditCardViewConstants.defaultLogo {
+    public var logo: UIImage? = nil {
         didSet {
             guard let viewModel = viewModel else {
                 cardLogo.image = logo

@@ -7,5 +7,24 @@
 //
 
 import UIKit
+import FlatCreditCard
+import FlatPaymentMethod
 
-class ViewController: UIViewController {}
+class ViewController: UIViewController {
+    @IBOutlet weak var creditCard: CreditCardView!
+    @IBOutlet weak var textField: UITextField!
+}
+
+extension ViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let viewModel = PaymentViewModel(delegate: creditCard)
+        creditCard.setViewModel(viewModel)
+    }
+}
+
+extension ViewController {
+    @IBAction func valueChanged(_ sender: Any) {
+        creditCard.number = textField.text ?? ""
+    }
+}

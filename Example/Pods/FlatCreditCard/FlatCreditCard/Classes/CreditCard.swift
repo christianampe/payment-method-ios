@@ -33,5 +33,5 @@ public extension CreditCard {
                                              cvv: CreditCardViewConstants.defaultCVV,
                                              expiration: CreditCardViewConstants.defaultExpiration,
                                              name: CreditCardViewConstants.defaultName,
-                                             logo: CreditCardViewConstants.defaultLogo)
+                                             logo: nil)
 }
