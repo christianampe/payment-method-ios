@@ -36,6 +36,11 @@ public class PaymentViewModel: CreditCardViewModel {
 
 public extension PaymentViewModel {
     public func number(for card: CreditCard) -> String {
+        guard !card.number.isEmpty else {
+            updateLogo(to: nil)
+            return card.number
+        }
+        
         switch validator.card(for: card.number) {
         case .identified(let card):
             updateLogo(to: card.logoDark)
