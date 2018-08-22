@@ -54,8 +54,4 @@ public extension PaymentViewModel {
         
         return numberSecurity.secureText(for: card.number)
     }
-    
-    public func cvv(for card: CreditCard) -> String {
-        return cvvSecurity.secureText(for: card.cvv)
-    }
 }
