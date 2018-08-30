@@ -20,7 +20,7 @@ public class PaymentViewModel: CreditCardViewModel {
     public var delegate: CreditCardViewModelDelegate
     
     // MARK: Custom Initalizer
-    public init(_ creditCard: CreditCard = .default,
+    public init(_ creditCard: CreditCard = .empty,
                 delegate: CreditCardViewModelDelegate,
                 supportedCards: [CreditCardType] = CreditCardType.all,
                 numberSecurity: CardNumberSecurityStyle = .off,

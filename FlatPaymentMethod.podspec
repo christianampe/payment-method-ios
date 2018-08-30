@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
     s.swift_version         = '4.1'
     s.source_files = 'FlatPaymentMethod/Classes/**/*'
     s.dependency 'PaymentValidator', '~> 0.0.6'
-    s.dependency 'FlatCreditCard', '~> 0.0.3'
+    s.dependency 'FlatCreditCard', '~> 0.0.4'
 end
