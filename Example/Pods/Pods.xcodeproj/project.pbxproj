@@ -41,7 +41,7 @@
 		B0AD6C495FA9CC6662BEFEE4102E4FEC /* FlatPaymentMethod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F98365234DBB2861CB79590A9FEDF3 /* FlatPaymentMethod-dummy.m */; };
 		B424E4A4A201E2190E49F6167E402B0C /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEF973F5283F0A60527468BC4E088EA /* PaymentViewModel.swift */; };
 		BF130B43213795950086A8E8 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF130B42213795950086A8E8 /* CreditCard.swift */; };
-		BF130B452137BD0E0086A8E8 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF130B442137BD0E0086A8E8 /* CreditCardType.swift */; };
+		BF130B4E2137C7710086A8E8 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF130B4D2137C7710086A8E8 /* CreditCardType.swift */; };
 		BF1E9A64F1191CE5AB7AE256A8BA1FB9 /* jcb.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6CB83080A31A64BB456D7261F041D4 /* jcb.png */; };
 		C929AD87A59D36E65C83A3E14A62CB62 /* Pods-FlatPaymentMethod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D866B65ABE039619DC986A9D8A92CC7 /* Pods-FlatPaymentMethod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C99A10C4CC554E5F3B162A5E3A4C8167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E99495397570511E0183CFA65D7485 /* Foundation.framework */; };
@@ -168,7 +168,7 @@
 		B6BA833863309F3727D1E2E668E5B481 /* FlatCreditCard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlatCreditCard.xcconfig; sourceTree = "<group>"; };
 		B777C9227AF1E3E78A181459C497C657 /* FlatCreditCard-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FlatCreditCard-dummy.m"; sourceTree = "<group>"; };
 		BF130B42213795950086A8E8 /* CreditCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreditCard.swift; path = FlatPaymentMethod/Classes/CreditCard.swift; sourceTree = "<group>"; };
-		BF130B442137BD0E0086A8E8 /* CreditCardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardType.swift; sourceTree = "<group>"; };
+		BF130B4D2137C7710086A8E8 /* CreditCardType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreditCardType.swift; path = FlatPaymentMethod/Classes/CreditCardType.swift; sourceTree = "<group>"; };
 		C2D6B741FFC8072E9B103DFF7DA7C74D /* FlatCreditCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatCreditCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8B53F9AD0DA55A6FE5C798946BC621B /* Mathematics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mathematics.swift; path = PaymentValidator/Classes/Mathematics.swift; sourceTree = "<group>"; };
 		CBFF596DE21D54F5BF32906A125723A2 /* FlatCreditCard-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatCreditCard-umbrella.h"; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 				DCB775432751FB1B9A395A90CE2EC027 /* CreditCardViewSecurityStyle.swift */,
 				2FEF973F5283F0A60527468BC4E088EA /* PaymentViewModel.swift */,
 				BF130B42213795950086A8E8 /* CreditCard.swift */,
-				BF130B442137BD0E0086A8E8 /* CreditCardType.swift */,
+				BF130B4D2137C7710086A8E8 /* CreditCardType.swift */,
 				E9377FF19AD3C58BE3A571B3C73620B6 /* Pod */,
 				A35BC00B37DAB39FB3557F866E2F8887 /* Support Files */,
 			);
@@ -702,7 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF130B452137BD0E0086A8E8 /* CreditCardType.swift in Sources */,
+				BF130B4E2137C7710086A8E8 /* CreditCardType.swift in Sources */,
 				E1C6ACFE57D93588CE367C2F3C4ED5E9 /* CreditCardViewNumberGroupingStyle.swift in Sources */,
 				BF130B43213795950086A8E8 /* CreditCard.swift in Sources */,
 				50EC91833F778FC18E36AEBF2C7585C9 /* CreditCardViewSecurityStyle.swift in Sources */,
