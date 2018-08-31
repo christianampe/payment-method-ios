@@ -45,6 +45,7 @@
 		B3694C7DCABA7F4FE821ACC30B23E593 /* CreditCardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DA931C120619764EB7C58B2B218780 /* CreditCardType.swift */; };
 		B890E09A3BE3CEADA013BCCEAD9EF2A2 /* FlatCreditCard-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B1544E1FB9A3EF26566C2D77DF41491F /* FlatCreditCard-dummy.m */; };
 		BA8069E650FA87989FA5433B1B126664 /* PaymentValidator-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AEC4C7BD9C28511A0EA04CA4BB13A68 /* PaymentValidator-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF3DB63C2138D7D8000D1670 /* CreditCardViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DB63B2138D7D8000D1670 /* CreditCardViewStyle.swift */; };
 		C1FB209A6F3AC8F0FD749E865FD6E41E /* diners-club.png in Resources */ = {isa = PBXBuildFile; fileRef = E1FFC665475A40BE3F9619D307266061 /* diners-club.png */; };
 		C929AD87A59D36E65C83A3E14A62CB62 /* Pods-FlatPaymentMethod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D866B65ABE039619DC986A9D8A92CC7 /* Pods-FlatPaymentMethod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C99A10C4CC554E5F3B162A5E3A4C8167 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3E99495397570511E0183CFA65D7485 /* Foundation.framework */; };
@@ -107,7 +108,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		016E68CD855040B7CFC4FD7559E8B0B1 /* PaymentValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PaymentValidator.framework; path = PaymentValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		016E68CD855040B7CFC4FD7559E8B0B1 /* PaymentValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaymentValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		085BE7364C9E7FE505FFC793EDCD0C04 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardViewModel.swift; path = FlatCreditCard/Classes/CreditCardViewModel.swift; sourceTree = "<group>"; };
 		088AC748A63EAB06736C89A418EB98E0 /* Pods-FlatPaymentMethod_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FlatPaymentMethod_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		09C29457BAC513052A643CEDB7EDA541 /* CreditCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCard.swift; path = FlatCreditCard/Classes/CreditCard.swift; sourceTree = "<group>"; };
@@ -120,7 +121,7 @@
 		269212DB76922B7B4C40B20695BCDA04 /* CreditCardViewNumberGroupingStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardViewNumberGroupingStyle.swift; path = FlatPaymentMethod/Classes/CreditCardViewNumberGroupingStyle.swift; sourceTree = "<group>"; };
 		29BEE65D492DE55193F1BFC7FAA31F4A /* CreditCardTypeValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardTypeValidator.swift; path = PaymentValidator/Classes/CreditCardTypeValidator.swift; sourceTree = "<group>"; };
 		2A0A5EE6AE217A939C40608E3F8B24DD /* Pods-FlatPaymentMethod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlatPaymentMethod_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		2E681CEA624E1CAB62B3BD03E328C99B /* Pods_FlatPaymentMethod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlatPaymentMethod_Example.framework; path = "Pods-FlatPaymentMethod_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E681CEA624E1CAB62B3BD03E328C99B /* Pods_FlatPaymentMethod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatPaymentMethod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED0354DBD9515467CA76B723AF4EE95 /* FlatCreditCard.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FlatCreditCard.xcconfig; sourceTree = "<group>"; };
 		30F280E924A04C148A0F283CA58250DE /* PaymentValidator-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PaymentValidator-dummy.m"; sourceTree = "<group>"; };
 		31F8D3B0A58BBEA64099F7C209340E2F /* CreditCardType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardType.swift; path = PaymentValidator/Classes/CreditCardType.swift; sourceTree = "<group>"; };
@@ -140,22 +141,22 @@
 		5BE0F6B151F62583F39E7FA789234A6A /* FlatCreditCard-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FlatCreditCard-prefix.pch"; sourceTree = "<group>"; };
 		5E702D3FB05656CB0159960C3576E5BB /* visa-light.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "visa-light.png"; path = "PaymentValidator/Assets/visa-light.png"; sourceTree = "<group>"; };
 		615556CAD7FB8C03946F1361E5328704 /* maestro.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = maestro.png; path = PaymentValidator/Assets/maestro.png; sourceTree = "<group>"; };
-		6B5113E408693ADE3FB7F567CE25ADE2 /* FlatPaymentMethod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlatPaymentMethod.framework; path = FlatPaymentMethod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B5113E408693ADE3FB7F567CE25ADE2 /* FlatPaymentMethod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatPaymentMethod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6F1F5FB9F0A1281AEA420924B90320 /* Pods-FlatPaymentMethod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FlatPaymentMethod_Example-dummy.m"; sourceTree = "<group>"; };
 		6D866B65ABE039619DC986A9D8A92CC7 /* Pods-FlatPaymentMethod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FlatPaymentMethod_Example-umbrella.h"; sourceTree = "<group>"; };
 		6DE01FF6AF906CB28CE027711CC1320F /* Pods-FlatPaymentMethod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FlatPaymentMethod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73003A61EBF853825776404043484609 /* dankort.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dankort.png; path = PaymentValidator/Assets/dankort.png; sourceTree = "<group>"; };
-		73158E0C28F9CCB00B03BE522185A811 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		73158E0C28F9CCB00B03BE522185A811 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		741B3163A463C632BCD220560FF43A92 /* PaymentViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PaymentViewModel.swift; path = FlatPaymentMethod/Classes/PaymentViewModel.swift; sourceTree = "<group>"; };
-		7780349E357BFE6BB4514474E1927D45 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7780349E357BFE6BB4514474E1927D45 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		7F1EDF30A752E832CA2F6147BA15F30F /* Pods-FlatPaymentMethod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FlatPaymentMethod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		80BD4AFA6CFBAE119BE1FA8A06489F7A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81EAF51062C63EF3F56411B090928FB6 /* CreditCardViewStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardViewStyle.swift; path = FlatCreditCard/Classes/CreditCardViewStyle.swift; sourceTree = "<group>"; };
-		8A33C627A5A29EE51F6A7A6C31ABFADB /* Pods_FlatPaymentMethod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FlatPaymentMethod_Tests.framework; path = "Pods-FlatPaymentMethod_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A33C627A5A29EE51F6A7A6C31ABFADB /* Pods_FlatPaymentMethod_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatPaymentMethod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5C9BBF6011B273639CEE7E56AEA417 /* PaymentValidator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PaymentValidator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		932C06C878B81553743960B4FCD77761 /* Pods-FlatPaymentMethod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlatPaymentMethod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9390B1539FF18EECDD211B8706A435F6 /* PaymentValidator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PaymentValidator-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95934B1C80FB20FFFDCF1354F198C6C2 /* CreditCardView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardView.swift; path = FlatCreditCard/Classes/CreditCardView.swift; sourceTree = "<group>"; };
 		9AEC4C7BD9C28511A0EA04CA4BB13A68 /* PaymentValidator-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PaymentValidator-umbrella.h"; sourceTree = "<group>"; };
 		9F3BC2C9EC38481F9789586BE8EAFC5F /* visa.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = visa.png; path = PaymentValidator/Assets/visa.png; sourceTree = "<group>"; };
@@ -171,9 +172,10 @@
 		B440F46EF1E90E943005C59C74C03F27 /* ImageExtractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageExtractor.swift; path = PaymentValidator/Classes/ImageExtractor.swift; sourceTree = "<group>"; };
 		B541A77ECD2E6DAEBB4B497618D9C47F /* PrefixContainable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrefixContainable.swift; path = PaymentValidator/Classes/PrefixContainable.swift; sourceTree = "<group>"; };
 		B9DBE0F07721DFF9631A4C46933623DD /* Mathematics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mathematics.swift; path = PaymentValidator/Classes/Mathematics.swift; sourceTree = "<group>"; };
-		C2D6B741FFC8072E9B103DFF7DA7C74D /* FlatCreditCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FlatCreditCard.framework; path = FlatCreditCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF3DB63B2138D7D8000D1670 /* CreditCardViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreditCardViewStyle.swift; path = FlatPaymentMethod/Classes/CreditCardViewStyle.swift; sourceTree = "<group>"; };
+		C2D6B741FFC8072E9B103DFF7DA7C74D /* FlatCreditCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlatCreditCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5EB3DDF76B457CC0BCDDC9BDBB39F27 /* CreditCardTypeValidationRequirement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardTypeValidationRequirement.swift; path = PaymentValidator/Classes/CreditCardTypeValidationRequirement.swift; sourceTree = "<group>"; };
-		CA3AE758221A78042866634D86BFD0E7 /* FlatPaymentMethod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = FlatPaymentMethod.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		CA3AE758221A78042866634D86BFD0E7 /* FlatPaymentMethod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = FlatPaymentMethod.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CBD55E8D61658E151EB30E97AB996574 /* CreditCardTypeValidationState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreditCardTypeValidationState.swift; path = PaymentValidator/Classes/CreditCardTypeValidationState.swift; sourceTree = "<group>"; };
 		CD112A0FCAF28D1D02FBDB6CD1523259 /* dankort-light.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "dankort-light.png"; path = "PaymentValidator/Assets/dankort-light.png"; sourceTree = "<group>"; };
 		CDB915AC73990CBCD7A83B33E6292957 /* Pods-FlatPaymentMethod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FlatPaymentMethod_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -286,7 +288,6 @@
 				8905966B291E956D965CF3C6D843B40D /* Resources */,
 				8E68593ACDB31EF162D559F30865A0A0 /* Support Files */,
 			);
-			name = FlatCreditCard;
 			path = FlatCreditCard;
 			sourceTree = "<group>";
 		};
@@ -410,6 +411,7 @@
 				269212DB76922B7B4C40B20695BCDA04 /* CreditCardViewNumberGroupingStyle.swift */,
 				58545DF5F3C6AA34BC73A74520C45E45 /* CreditCardViewSecurityStyle.swift */,
 				741B3163A463C632BCD220560FF43A92 /* PaymentViewModel.swift */,
+				BF3DB63B2138D7D8000D1670 /* CreditCardViewStyle.swift */,
 				C304C248BD5ABBA901D3F2A597C58723 /* Pod */,
 				F6AA3390E31FF0640AB2A923750079DF /* Support Files */,
 			);
@@ -457,7 +459,6 @@
 				3A8B6456C6002CBB4118099BBE0A0B29 /* Resources */,
 				0A6B2953862C76A473237DB55BAFE009 /* Support Files */,
 			);
-			name = PaymentValidator;
 			path = PaymentValidator;
 			sourceTree = "<group>";
 		};
@@ -729,6 +730,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F5F6E0CDA9FC75D4C024AAAF44A64EE /* CreditCard.swift in Sources */,
+				BF3DB63C2138D7D8000D1670 /* CreditCardViewStyle.swift in Sources */,
 				B3694C7DCABA7F4FE821ACC30B23E593 /* CreditCardType.swift in Sources */,
 				ADC7B8B238E31A9E0728D31F2F3D0769 /* CreditCardViewNumberGroupingStyle.swift in Sources */,
 				A7D3B2248A05CD16C6BA3555FF806FB9 /* CreditCardViewSecurityStyle.swift in Sources */,

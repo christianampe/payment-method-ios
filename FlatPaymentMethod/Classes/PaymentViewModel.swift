@@ -44,13 +44,19 @@ public extension PaymentViewModel {
         switch validator.card(for: card.number) {
         case .identified(let card):
             updateLogo(to: card.logoDark)
-            delegate.styleUpdated(to: card.style)
+            delegate.styleUpdated(to: card.identifiedStyle)
         case .indeterminate(let cards):
             updateLogo(to: cards.first?.logoDark)
-        case .unsupported:
-            break
+            
+            if let firstCard = cards.first {
+                delegate.styleUpdated(to: firstCard.indeterminateStyle)
+            }
+        case .unsupported(let cards):
+            if let firstCard = cards.first {
+                delegate.styleUpdated(to: firstCard.unsupportedStyle)
+            }
         case .invalid:
-            break
+            delegate.styleUpdated(to: .defaultInvalidStyle)
         }
         
         return numberSecurity.secureText(for: card.number)
