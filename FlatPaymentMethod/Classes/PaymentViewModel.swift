@@ -38,6 +38,7 @@ public extension PaymentViewModel {
     public func number(for card: CreditCard) -> String {
         guard !card.number.isEmpty else {
             updateLogo(to: nil)
+            delegate.styleUpdated(to: .default)
             return card.number
         }
         
