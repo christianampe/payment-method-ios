@@ -22,7 +22,7 @@
   "source_files": "FlatPaymentMethod/Classes/**/*",
   "dependencies": {
     "PaymentValidator": [
-      "~> 0.0.7"
+      "~> 0.0.8"
     ],
     "FlatCreditCard": [
       "~> 0.0.8"
