@@ -36,13 +36,13 @@ public class PaymentViewModel: CreditCardViewModel {
 
 public extension PaymentViewModel {
     public func number(for card: CreditCard) -> String {
-        guard !card.number.isEmpty else {
+        guard !card.metadata.number.isEmpty else {
             updateLogo(to: nil)
             delegate.styleUpdated(to: .default)
-            return card.number
+            return card.metadata.number
         }
         
-        switch validator.card(for: card.number) {
+        switch validator.card(for: card.metadata.number) {
         case .identified(let card):
             updateLogo(to: card.logoDark)
             delegate.styleUpdated(to: card.identifiedStyle)
@@ -60,10 +60,25 @@ public extension PaymentViewModel {
             delegate.styleUpdated(to: .defaultInvalidStyle)
         }
         
-        return numberSecurity.secureText(for: card.number)
+        return numberSecurity.secureText(for: card.metadata.number)
     }
     
     public func cvv(for card: CreditCard) -> String {
-        return cvvSecurity.secureText(for: card.cvv)
+        return cvvSecurity.secureText(for: card.metadata.cvv)
+    }
+}
+
+extension PaymentViewModel {
+    func number(for cardState: CreditCardTypeValidationState) {
+        switch cardState {
+        case .identified(let card):
+            
+        case .indeterminate(let cards):
+            
+        case .unsupported(let cards):
+            
+        case .invalid:
+            
+        }
     }
 }
