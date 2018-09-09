@@ -18,7 +18,11 @@ class ViewController: UIViewController {
 extension ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewModel = PaymentViewModel(delegate: creditCard, supportedCards: [])
+        let viewModel = PaymentViewModel(delegate: creditCard,
+                                         supportedCards: [.visa(type: .electron),
+                                                          .visa(type: .visa),
+                                                          .mastercard])
+        
         creditCard.setViewModel(viewModel)
     }
 }
