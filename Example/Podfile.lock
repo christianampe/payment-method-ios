@@ -1,12 +1,12 @@
 PODS:
-  - FlatCreditCard (0.0.6)
+  - FlatCreditCard (0.0.8)
   - FlatPaymentMethod (0.0.1):
-    - FlatCreditCard (~> 0.0.6)
+    - FlatCreditCard (~> 0.0.8)
     - PaymentValidator (~> 0.0.7)
   - PaymentValidator (0.0.7)
 
 DEPENDENCIES:
-  - FlatCreditCard (~> 0.0.6)
+  - FlatCreditCard (~> 0.0.8)
   - FlatPaymentMethod (from `../`)
   - PaymentValidator (~> 0.0.7)
 
@@ -20,10 +20,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FlatCreditCard: 97a0e19027f424a6365cb1409f9410688c7fc10c
-  FlatPaymentMethod: 3ad376abe68500d4af7f49a2a823b18f3a49bff2
+  FlatCreditCard: 375bd23dc4ded71533405e7f7f402aa29d9a6f49
+  FlatPaymentMethod: 096756455abb8e7f10b67fc63cef1e1ed6879c5e
   PaymentValidator: e397d9ee716ebaf3b30563057396755dcdc6c9a0
 
-PODFILE CHECKSUM: 32532da3b85545f8afcaf5e70ef74c00af1ab6b3
+PODFILE CHECKSUM: 0ca3e5d39ec5a06ade39851b7f9ee213bc4fe31f
 
 COCOAPODS: 1.5.0
