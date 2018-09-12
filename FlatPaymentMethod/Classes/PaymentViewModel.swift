@@ -38,29 +38,31 @@ public extension PaymentViewModel {
     public func number(for card: CreditCard) -> String {
         guard !card.metadata.number.isEmpty else {
             updateLogo(to: nil)
-            delegate.styleUpdated(to: .default)
+            updateStyle(to: .default)
             return card.metadata.number
         }
         
-        switch validator.card(for: card.metadata.number) {
+        let state = validator.state(prefix: card.metadata.number)
+        
+        switch state {
         case .identified(let card):
             updateLogo(to: card.logoDark)
-            delegate.styleUpdated(to: card.identifiedStyle)
+            updateStyle(to: card.identifiedStyle)
         case .indeterminate(let cards):
             updateLogo(to: cards.first?.logoDark)
             
             if let firstCard = cards.first {
-                delegate.styleUpdated(to: firstCard.indeterminateStyle)
+                updateStyle(to: firstCard.indeterminateStyle)
             }
         case .unsupported(let cards):
             if let firstCard = cards.first {
-                delegate.styleUpdated(to: firstCard.unsupportedStyle)
+                updateStyle(to: firstCard.unsupportedStyle)
             }
         case .invalid:
-            delegate.styleUpdated(to: .defaultInvalidStyle)
+            updateStyle(to: .defaultInvalidStyle)
         }
         
-        return numberSecurity.secureText(for: card.metadata.number)
+        return formatted(for: state, number: card.metadata.number)
     }
     
     public func cvv(for card: CreditCard) -> String {
@@ -69,16 +71,15 @@ public extension PaymentViewModel {
 }
 
 extension PaymentViewModel {
-    func number(for cardState: CreditCardTypeValidationState) {
-        switch cardState {
-        case .identified(let card):
-            
-        case .indeterminate(let cards):
-            
-        case .unsupported(let cards):
-            
-        case .invalid:
-            
+    func formatted(for state: CreditCardTypeValidationState, number: String) -> String {
+        let secureText = numberSecurity.secureText(for: number)
+        
+        var numberGrouping: CreditCardViewNumberGroupingStyle = .none
+        
+        if let grouping = state.segmentGrouping(for: number.count) {
+            numberGrouping = .custom(grouping: grouping, separator: .space, addRemainderSection: false)
         }
+        
+        return numberGrouping.groupedText(for: secureText)
     }
 }

@@ -49,5 +49,25 @@ public extension CardCVVSecurityStyle {
 }
 
 public extension CardCVVSecurityStyle {
-    public static var `default`: CardCVVSecurityStyle = .on(secureCharacter: "•")
+    public static var `default`: CardCVVSecurityStyle = .on(secureCharacter: .bullet)
+}
+
+public extension Character {
+    public static var bullet: Character {
+        return "•"
+    }
+    
+    public static var space: Character {
+        return " "
+    }
+}
+
+public extension String {
+    public static var bullet: String {
+        return "•"
+    }
+    
+    public static var space: String {
+        return " "
+    }
 }
